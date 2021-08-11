@@ -106,39 +106,58 @@ class GameViewController: UIViewController {
         game.currentQuestion?.dummyAnswers.removeAll()
         game.resetMoles()
         game.createQuestion()
-        print(game.currentQuestion!.toString())
-        print(game.currentQuestion!.dummyAnswers)
-        print(game.currentQuestion!.answer)
-        print("")
+//        print(game.currentQuestion!.toString())
+//        print(game.currentQuestion!.dummyAnswers)
+//        print(game.currentQuestion!.answer)
+//        print("")
         game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
         
         self.updateUI()
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
-        print(1)
-        game.resetMoles()
-        print(2)
-        game.createQuestion()
-        print(3)
-        print(game.currentQuestion!.toString())
-        print(4)
-        print(game.currentQuestion!.dummyAnswers)
-        print(5)
-        print(game.currentQuestion!.dummyAnswers)
-        print(6)
-        game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
-        print(7)
+        if sender.currentTitle! == "START" {
+            game.resetMoles()
+            game.createQuestion()
+//            print(game.currentQuestion!.toString())
+//            print(game.currentQuestion!.dummyAnswers)
+//            print(game.currentQuestion!.dummyAnswers)
+            game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
+            
+            self.updateUI()
+            //self.startButton.isHidden = true
+            self.moleStack.isHidden = false
+            self.whatIsLabel.text = "What is..."
+            
+            totalTime = 100
+            secondsRemaining = totalTime
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+            
+            sender.setTitle("PAUSE", for: .normal)
+            
+        } else if sender.currentTitle! == "PAUSE" || sender.currentTitle! == "RESUME" {
+            if sender.currentTitle! == "PAUSE" {
+                sender.setTitle("RESUME", for: .normal)
+                game.currentQuestion?.dummyAnswers.removeAll()
+                game.currentQuestion = nil
+                game.resetMoles()
+                game.createQuestion()
+                game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
+                self.updateUI()
+                
+                self.moleStack.isHidden = true
+                self.questionLabel.isHidden = true
+                self.whatIsLabel.text = "Game is paused"
+                timer.invalidate()
+            } else {
+                sender.setTitle("PAUSE", for: .normal)
+                self.moleStack.isHidden = false
+                self.questionLabel.isHidden = false
+                self.whatIsLabel.text = "What is..."
+                timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+            }
+        }
         
-        self.updateUI()
-        self.startButton.isHidden = true
-        self.moleStack.isHidden = false
-        self.whatIsLabel.text = "What is..."
-        
-        print(8)
-        totalTime = 100
-        secondsRemaining = totalTime
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         
     }
     
