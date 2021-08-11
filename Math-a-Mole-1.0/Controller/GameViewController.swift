@@ -43,10 +43,11 @@ class GameViewController: UIViewController {
     var secondsRemaining = 10
     
     var game = Game(numMoles: 0, questionParamMin: 0, questionParamMax: 0)
-        
+    var gameDifficulty: String = ""
+    
     var views: [UIView] = []
     var moleButtons: [UIButton] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -68,12 +69,36 @@ class GameViewController: UIViewController {
         questionLabel.text = "Press the 'START' button to begin"
         whatIsLabel.text = "MATH-A-MOLE"
         
-        game.numMoles = 12
-        game.questionParamMin = 0
-        game.questionParamMax = 10
+        self.setGameParameters()
         
         game.setUp()
         
+    }
+    
+    func setGameParameters() {
+        if gameDifficulty == "Beginner" {
+            game.numMoles = 12
+            game.questionTypes = [AddQuestion(), SubQuestion()]
+            game.questionParamMin = 0
+            game.questionParamMax = 5
+        } else if gameDifficulty == "Intermediate" {
+            game.numMoles = 12
+            game.questionTypes = [AddQuestion(), SubQuestion()]
+            game.questionParamMin = 0
+            game.questionParamMax = 10
+        } else if gameDifficulty == "Advanced" {
+            game.numMoles = 12
+            game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
+            game.questionParamMin = 0
+            game.questionParamMax = 10
+        } else if gameDifficulty == "Expert" {
+            game.numMoles = 12
+            game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
+            game.questionParamMin = 0
+            game.questionParamMax = 15
+        } else {
+            print("ERROR: game difficulty not captured")
+        }
     }
     
     @IBAction func molePressed(_ sender: UIButton) {
@@ -91,49 +116,64 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startPressed(_ sender: UIButton) {
+        print(1)
         game.resetMoles()
+        print(2)
         game.createQuestion()
+        print(3)
         print(game.currentQuestion!.toString())
+        print(4)
         print(game.currentQuestion!.dummyAnswers)
+        print(5)
         print(game.currentQuestion!.dummyAnswers)
+        print(6)
         game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
+        print(7)
+        
         self.updateUI()
+        self.startButton.isHidden = true
+        self.moleStack.isHidden = false
+        self.whatIsLabel.text = "What is..."
         
-        startButton.isHidden = true
-        moleStack.isHidden = false
-        whatIsLabel.text = "What is..."
-        
+        print(8)
         totalTime = 100
         secondsRemaining = totalTime
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
     }
     
     @objc func updateCounter() {
         
         let progressPercentage = Float(secondsRemaining) / Float(totalTime)
         
-        progressBar.progress = Float(progressPercentage)
+        
+        self.progressBar.progress = Float(progressPercentage)
+        
         
         if secondsRemaining > 0 {
             secondsRemaining -= 1
         } else {
             timer.invalidate()
-            startButton.isHidden = false
-            moleStack.isHidden = true
-            questionLabel.text = "Moles Mathed: \(game.numCorrectAnswers)"
+            
+            self.startButton.isHidden = false
+            self.moleStack.isHidden = true
+            
             game.end()
         }
     }
     
     func updateUI() {
-        questionLabel.text = game.currentQuestion?.toString()
+        
+        self.questionLabel.text = self.game.currentQuestion?.toString()
         self.updateMoleArray()
+        
     }
     
     func updateMoleArray() {
+        
         var index: Int = 0
-        for moleButton in moleButtons {
-            moleButton.setTitle("\(game.moleArray[index].moleAnswer)", for: .normal)
+        for moleButton in self.moleButtons {
+            moleButton.setTitle("\(self.game.moleArray[index].moleAnswer)", for: .normal)
             index += 1
             if moleButton.currentTitle == "-1" {
                 moleButton.alpha = 0.0
@@ -141,6 +181,8 @@ class GameViewController: UIViewController {
                 moleButton.alpha = 1.0
             }
         }
+        
+        
     }
 }
 

@@ -12,6 +12,7 @@
 		3655B7C626B305EA00EC1580 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C526B305EA00EC1580 /* Game.swift */; };
 		3655B7C926B3062B00EC1580 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C826B3062B00EC1580 /* Flashcard.swift */; };
 		3655B7CC26B3072400EC1580 /* Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7CB26B3072400EC1580 /* Mole.swift */; };
+		3662084226BB9FAF00DB0E5C /* WelcomeViewConntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */; };
 		366F9E57268FD7FE00A5DD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */; };
 		366F9E59268FD7FE00A5DD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */; };
 		366F9E5B268FD7FE00A5DD6F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */; };
@@ -26,6 +27,7 @@
 		3655B7C526B305EA00EC1580 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3655B7C826B3062B00EC1580 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		3655B7CB26B3072400EC1580 /* Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mole.swift; sourceTree = "<group>"; };
+		3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewConntroller.swift; sourceTree = "<group>"; };
 		366F9E53268FD7FE00A5DD6F /* Math-a-Mole-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-a-Mole-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */,
+				3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3662084226BB9FAF00DB0E5C /* WelcomeViewConntroller.swift in Sources */,
 				366F9E5B268FD7FE00A5DD6F /* GameViewController.swift in Sources */,
 				3655B7C626B305EA00EC1580 /* Game.swift in Sources */,
 				3655B7CC26B3072400EC1580 /* Mole.swift in Sources */,

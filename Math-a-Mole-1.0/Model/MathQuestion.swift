@@ -16,18 +16,18 @@ class MathQuestion {
     var answeredCorrectly: Bool = false
     var dummyAnswers: [Int] = []
     
-    func generalSetUpAndSolve() {
+    func generalSetUpAndSolve(questionParamMin: Int, questionParamMax: Int) {
         if let question = self as? AddQuestion {
-            question.setUp()
+            question.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             question.solve()
         } else if let question = self as? SubQuestion {
-            question.setUp()
+            question.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             question.solve()
         } else if let question = self as? MultQuestion {
-            question.setUp()
+            question.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             question.solve()
         } else if let question = self as? DivQuestion {
-            question.setUp()
+            question.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             question.solve()
         }
     }
@@ -70,7 +70,7 @@ class MathQuestion {
     }
     
     func dummyMultQuestions() {
-
+        
         if self.no1 == 0 && self.no2 == 0 {     // 0 * 0
             dummyAnswers.append(1)
             dummyAnswers.append(2)
@@ -86,11 +86,11 @@ class MathQuestion {
             dummyAnswers.append(self.answer + self.no1)
             dummyAnswers.append(self.answer - self.no2)
         }
-
+        
     }
     
     func dummyDivQuestions() {
-
+        
         if self.answer == 0 {                   // 0 / 5
             dummyAnswers.append(self.no2)
             dummyAnswers.append(1)
@@ -106,7 +106,7 @@ class MathQuestion {
             dummyAnswers.append(self.answer - 1)
             dummyAnswers.append(self.answer + 1)
         }
-
+        
     }
     
     func toString() -> String {
@@ -121,7 +121,7 @@ class AddQuestion: MathQuestion, Solvable {
     
     var questionParamMax: Int = 10
     
-    func setUp() {
+    func setUp(questionParamMin: Int, questionParamMax: Int) {
         self.operation = "+"
         self.no1 = Int.random(in: questionParamMin...questionParamMax)
         self.no2 = Int.random(in: questionParamMin...questionParamMax)
@@ -139,7 +139,7 @@ class SubQuestion: MathQuestion, Solvable {
     var questionParamMax: Int = 10
     
     
-    func setUp() {
+    func setUp(questionParamMin: Int, questionParamMax: Int) {
         
         self.operation = "-"
         
@@ -147,7 +147,7 @@ class SubQuestion: MathQuestion, Solvable {
             
             // Create a subtraction problem and then translate into an addition problem
             let reverseProblem = AddQuestion()
-            reverseProblem.setUp()
+            reverseProblem.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             reverseProblem.solve()
             
             self.no1 = reverseProblem.answer
@@ -172,7 +172,7 @@ class MultQuestion: MathQuestion, Solvable {
     var questionParamMax: Int = 10
     
     
-    func setUp() {
+    func setUp(questionParamMin: Int, questionParamMax: Int) {
         self.operation = "*"
         self.no1 = Int.random(in: questionParamMin...questionParamMax)
         self.no2 = Int.random(in: questionParamMin...questionParamMax)
@@ -181,7 +181,7 @@ class MultQuestion: MathQuestion, Solvable {
     func solve() {
         self.answer = no1 * no2
     }
-
+    
 }
 
 class DivQuestion: MathQuestion, Solvable {
@@ -190,7 +190,7 @@ class DivQuestion: MathQuestion, Solvable {
     
     var questionParamMax: Int = 10
     
-    func setUp() {
+    func setUp(questionParamMin: Int, questionParamMax: Int) {
         
         self.operation = "/"
         
@@ -198,7 +198,7 @@ class DivQuestion: MathQuestion, Solvable {
             
             // Create a multiplication problem and then translate into a division problem
             let reverseProblem = MultQuestion()
-            reverseProblem.setUp()
+            reverseProblem.setUp(questionParamMin: questionParamMin, questionParamMax: questionParamMax)
             reverseProblem.solve()
             
             self.no1 = reverseProblem.answer

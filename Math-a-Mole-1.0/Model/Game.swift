@@ -18,7 +18,7 @@ class Game {
     var currentQuestion: MathQuestion? = nil
     var userAnswer: Int = -1
     var numCorrectAnswers: Int = 0
-    let questionTypes: [MathQuestion] = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
+    var questionTypes: [MathQuestion] = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
     var moleArray: [Mole] = []
     var flashcards: [Flashcard] = []
     
@@ -46,9 +46,13 @@ class Game {
     }
     
     func createQuestion() {
+        print("A")
         currentQuestion = questionTypes.randomElement()
-        currentQuestion?.generalSetUpAndSolve()
+        print("B")
+        currentQuestion?.generalSetUpAndSolve(questionParamMin: self.questionParamMin, questionParamMax: self.questionParamMax)
+        print("C")
         currentQuestion?.setDummyAnswers()
+        print("D")
     }
     
     func setMoles(dummyAnswers: [Int]) {

@@ -12,7 +12,7 @@ protocol Solvable {
     var questionParamMin: Int { get set }
     var questionParamMax: Int { get set }
     
+    func setUp(questionParamMin: Int, questionParamMax: Int)
     func solve()
-    func setUp()
     
 }
