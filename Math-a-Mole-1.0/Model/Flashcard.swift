@@ -8,23 +8,25 @@
 import Foundation
 
 class Flashcard {
-    let question: MathQuestion
+    let question: String
+    let answer: Int
     
     var answerShowing: Bool = false
     var textShowing: String = ""
     
-    init(question: MathQuestion) {
+    init(question: String, answer: Int) {
         self.question = question
-        self.textShowing = question.toString()
+        self.answer = answer
+        self.textShowing = question
     }
     
     func flip() {
         if self.answerShowing == false {
             self.answerShowing = true
-            self.textShowing = "\(self.question.answer)"
+            self.textShowing = "\(answer)"
         } else {
             self.answerShowing = false
-            self.textShowing = self.question.toString()
+            self.textShowing = question
         }
     }
 }

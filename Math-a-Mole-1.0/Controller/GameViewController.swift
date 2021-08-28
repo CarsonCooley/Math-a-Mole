@@ -56,6 +56,10 @@ class GameViewController: UIViewController {
         
         moleButtons = [mole1, mole2, mole3, mole4, mole5, mole6, mole7, mole8, mole9, mole10, mole11, mole12]
         
+        for moleButton in moleButtons {
+            moleButton.setTitleColor(UIColor.white, for: .normal)
+        }
+        
         views = [topView, moleView, bottomView]
         for view in views {
             view.backgroundColor = UIColor.clear
@@ -67,7 +71,7 @@ class GameViewController: UIViewController {
         
         questionLabel.numberOfLines = 3
         questionLabel.text = "Press the 'START' button to begin"
-        whatIsLabel.text = "MATH-A-MOLE"
+        whatIsLabel.text = ""
         
         self.setGameParameters()
         
@@ -81,21 +85,24 @@ class GameViewController: UIViewController {
             game.questionTypes = [AddQuestion(), SubQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 5
+            game.time = 5
         } else if gameDifficulty == "Intermediate" {
             game.numMoles = 12
             game.questionTypes = [AddQuestion(), SubQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 10
+            game.time = 60
         } else if gameDifficulty == "Advanced" {
             game.numMoles = 12
-            game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
+            game.questionTypes = [MultQuestion(), DivQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 10
         } else if gameDifficulty == "Expert" {
             game.numMoles = 12
             game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
             game.questionParamMin = 0
-            game.questionParamMax = 15
+            game.questionParamMax = 10
+            game.time = 90
         } else {
             print("ERROR: game difficulty not captured")
         }
@@ -106,10 +113,6 @@ class GameViewController: UIViewController {
         game.currentQuestion?.dummyAnswers.removeAll()
         game.resetMoles()
         game.createQuestion()
-//        print(game.currentQuestion!.toString())
-//        print(game.currentQuestion!.dummyAnswers)
-//        print(game.currentQuestion!.answer)
-//        print("")
         game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
         
         self.updateUI()
@@ -129,7 +132,7 @@ class GameViewController: UIViewController {
             self.moleStack.isHidden = false
             self.whatIsLabel.text = "What is..."
             
-            totalTime = 100
+            totalTime = game.time
             secondsRemaining = totalTime
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
             
@@ -161,6 +164,11 @@ class GameViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! FlashcardViewController
+        vc.flashcards = self.game.flashcards
+    }
+    
     @objc func updateCounter() {
         
         let progressPercentage = Float(secondsRemaining) / Float(totalTime)
@@ -178,6 +186,8 @@ class GameViewController: UIViewController {
             self.moleStack.isHidden = true
             
             game.end()
+            
+            performSegue(withIdentifier: "AdvanceToFC", sender: self)
         }
     }
     
@@ -200,7 +210,6 @@ class GameViewController: UIViewController {
                 moleButton.alpha = 1.0
             }
         }
-        
         
     }
 }

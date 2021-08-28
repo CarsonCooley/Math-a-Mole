@@ -33,7 +33,7 @@ class WelcomeViewConntroller: UIViewController {
         for view in views {
             view.backgroundColor = UIColor.clear
         }
-        descriptionLabel.text = "what in the fuck is even happening right now I have no idea if this app is even going to publish now"
+        descriptionLabel.text = ""
     }
     
     @IBAction func difficultySelected(_ sender: UIButton) {
@@ -43,6 +43,7 @@ class WelcomeViewConntroller: UIViewController {
         }
         sender.alpha = 1.0
         activeDifficultySelected = sender.currentTitle!
+        self.updateDescriptionLabel()
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
@@ -52,6 +53,18 @@ class WelcomeViewConntroller: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! GameViewController
         vc.gameDifficulty = self.activeDifficultySelected
+    }
+    
+    func updateDescriptionLabel() {
+        if self.activeDifficultySelected == "Beginner" {
+            self.descriptionLabel.text = "Whack some moles with some small addition and subtraction! Just 30 seconds."
+        } else if self.activeDifficultySelected == "Intermediate" {
+            self.descriptionLabel.text = "Step it up with some larger numbers. A full minute of mole-whacking fun!"
+        } else if self.activeDifficultySelected == "Advanced" {
+            self.descriptionLabel.text = "Switch it up to some multiplication and division mole-whacking. A full minute of mole-whacking fun!"
+        } else if self.activeDifficultySelected == "Expert" {
+            self.descriptionLabel.text = "Additon. Subtraction. Multiplication. Division. How many moles can you whack in 90 seconds?"
+        }
     }
     
 }

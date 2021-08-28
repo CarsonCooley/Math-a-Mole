@@ -11,7 +11,7 @@ class MathQuestion {
     
     var no1: Int = -1
     var no2: Int = -1
-    var operation: String = "none"
+    var operation: String? = nil
     var answer: Int = -1
     var answeredCorrectly: Bool = false
     var dummyAnswers: [Int] = []
@@ -110,7 +110,7 @@ class MathQuestion {
     }
     
     func toString() -> String {
-        return "\(no1) \(operation) \(no2)"
+        return "\(no1) \(operation!) \(no2)"
     }
     
 }
@@ -173,7 +173,7 @@ class MultQuestion: MathQuestion, Solvable {
     
     
     func setUp(questionParamMin: Int, questionParamMax: Int) {
-        self.operation = "*"
+        self.operation = "x"
         self.no1 = Int.random(in: questionParamMin...questionParamMax)
         self.no2 = Int.random(in: questionParamMin...questionParamMax)
     }

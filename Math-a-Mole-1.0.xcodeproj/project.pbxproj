@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361D109226C4618D009363B7 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361D109126C4618D009363B7 /* FlashcardViewController.swift */; };
 		3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7BF26B3054600EC1580 /* MathQuestion.swift */; };
 		3655B7C326B3057700EC1580 /* Solvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C226B3057700EC1580 /* Solvable.swift */; };
 		3655B7C626B305EA00EC1580 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C526B305EA00EC1580 /* Game.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		361D109126C4618D009363B7 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		3655B7BF26B3054600EC1580 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
 		3655B7C226B3057700EC1580 /* Solvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solvable.swift; sourceTree = "<group>"; };
 		3655B7C526B305EA00EC1580 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */,
 				3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */,
+				361D109126C4618D009363B7 /* FlashcardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				3655B7C326B3057700EC1580 /* Solvable.swift in Sources */,
 				366F9E57268FD7FE00A5DD6F /* AppDelegate.swift in Sources */,
 				366F9E59268FD7FE00A5DD6F /* SceneDelegate.swift in Sources */,
+				361D109226C4618D009363B7 /* FlashcardViewController.swift in Sources */,
 				3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */,
 				3655B7C926B3062B00EC1580 /* Flashcard.swift in Sources */,
 			);

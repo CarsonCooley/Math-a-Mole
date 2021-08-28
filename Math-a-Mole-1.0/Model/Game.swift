@@ -22,6 +22,8 @@ class Game {
     var moleArray: [Mole] = []
     var flashcards: [Flashcard] = []
     
+    var time: Int = -1
+    
     // MARK: - INIT
     
     init(numMoles: Int, questionParamMin: Int, questionParamMax: Int) {
@@ -40,19 +42,26 @@ class Game {
     }
     
     func checkUserAnswer(userAnswer: Int) {
+        print(currentQuestion?.toString())
+        print(currentQuestion?.answer)
         if userAnswer == currentQuestion!.answer {
+            print("Correct")
             numCorrectAnswers += 1
+        } else {
+            print("Incorrect")
+            let newFlashcard = Flashcard(question: currentQuestion!.toString(), answer: currentQuestion!.answer)
+            flashcards.append(newFlashcard)
+            for flashcard in flashcards {
+                print("\(flashcard.question) = \(flashcard.answer)" )
+            }
         }
+        print("")
     }
     
     func createQuestion() {
-        print("A")
         currentQuestion = questionTypes.randomElement()
-        print("B")
         currentQuestion?.generalSetUpAndSolve(questionParamMin: self.questionParamMin, questionParamMax: self.questionParamMax)
-        print("C")
         currentQuestion?.setDummyAnswers()
-        print("D")
     }
     
     func setMoles(dummyAnswers: [Int]) {
@@ -79,7 +88,6 @@ class Game {
     
     func end() {
         currentQuestion = nil
-        flashcards.removeAll()
         numCorrectAnswers = 0
     }
     
