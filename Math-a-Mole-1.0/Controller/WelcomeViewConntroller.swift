@@ -27,18 +27,37 @@ class WelcomeViewConntroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.systemTeal
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.brown]
+        navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/255, green: 50/255, blue: 200/255, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.init(red: 100/255, green: 50/255, blue: 50/255, alpha: 1.0)]
         nextButton.alpha = 0.0
+        
         difficultyButtons = [beginnerButton, intermediateButton, advancedButton, expertButton]
+        for button in difficultyButtons {
+            button.layer.cornerRadius = 10
+            button.clipsToBounds = true
+        }
+        
+        nextButton.layer.cornerRadius = 10
+        nextButton.clipsToBounds = true
+        
         views = [topView, middleView, bottomView]
         for view in views {
             view.backgroundColor = UIColor.clear
         }
+        
         descriptionLabel.text = ""
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        nextButton.isHidden = true
+        descriptionLabel.text = ""
+        for button in difficultyButtons {
+            button.alpha = 1.0
+        }
+    }
+    
     @IBAction func difficultySelected(_ sender: UIButton) {
+        nextButton.isHidden = false
         nextButton.alpha = 1.0
         for button in difficultyButtons {
             button.alpha = 0.33

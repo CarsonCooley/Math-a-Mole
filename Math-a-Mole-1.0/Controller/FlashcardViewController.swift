@@ -14,7 +14,6 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
-    @IBOutlet weak var homeButton: UIButton!
     
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
@@ -26,6 +25,8 @@ class FlashcardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        topView.layer.cornerRadius = 10
+        topView.clipsToBounds = true
         self.updateFlashcard(change: 0)
         views = [topView, bottomView]
     }

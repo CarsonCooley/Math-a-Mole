@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var whatIsLabel: UILabel!
+    @IBOutlet weak var exitButton: UIBarButtonItem!
     
     @IBOutlet weak var mole1: UIButton!
     @IBOutlet weak var mole2: UIButton!
@@ -58,6 +59,13 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        exitButton.isEnabled = true
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+        
+        startButton.layer.cornerRadius = 10
+        startButton.clipsToBounds = true
         
         moleStack.isHidden = true
         
@@ -125,11 +133,17 @@ class GameViewController: UIViewController {
         self.updateUI()
     }
     
+    @IBAction func exitPressed(_ sender: UIBarButtonItem) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBAction func startPressed(_ sender: UIButton) {
         if sender.currentTitle! == "START" {
             
             self.navigationItem.leftBarButtonItem = nil
             self.navigationItem.hidesBackButton = true
+            
+            exitButton.isEnabled = false
             
             game.resetMoles()
             game.createQuestion()
@@ -153,17 +167,19 @@ class GameViewController: UIViewController {
                 game.resetMoles()
                 game.createQuestion()
                 game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
-                self.updateUI()
                 
+                self.updateUI()
                 self.moleStack.isHidden = true
                 self.questionLabel.isHidden = true
                 self.whatIsLabel.text = "Game is paused"
+                exitButton.isEnabled = true
                 timer.invalidate()
             } else {
                 sender.setTitle("PAUSE", for: .normal)
                 self.moleStack.isHidden = false
                 self.questionLabel.isHidden = false
                 self.whatIsLabel.text = "What is..."
+                exitButton.isEnabled = false
                 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
             }
         }

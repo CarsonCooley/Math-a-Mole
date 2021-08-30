@@ -245,10 +245,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Math-a-Mole" id="s0b-yh-Ab6">
                         <barButtonItem key="backBarButtonItem" title="Home" id="zQB-6C-2zb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Exit" id="acR-wU-PWV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="exitPressed:" destination="BYZ-38-t0r" id="3KH-F4-EAj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="lZZ-V4-V4e" id="PbA-qp-XSM"/>
                         <outlet property="bottomViewHeight" destination="pF7-XL-Bl8" id="zbf-u9-iyO"/>
+                        <outlet property="exitButton" destination="acR-wU-PWV" id="Kgg-f3-vkR"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="SZt-G5-GdT"/>
                         <outlet property="mole1" destination="F3B-gu-bWs" id="Bxs-bz-Gfg"/>
                         <outlet property="mole10" destination="TLp-zb-0Yc" id="nia-6y-tPT"/>
@@ -381,6 +388,7 @@
                     <navigationItem key="navigationItem" title="Math-a-Mole" id="jzJ-G1-zBb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="gYF-A8-onN"/>
                         <barButtonItem key="rightBarButtonItem" title="Home" id="MbT-TK-0cE">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="homeButtonPressed:" destination="b8a-Rw-nnB" id="h8y-jj-lf1"/>
                             </connections>
