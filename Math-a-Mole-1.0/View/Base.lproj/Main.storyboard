@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Math-a-Mole-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Math_a_Mole_1_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,7 +243,9 @@
                             <constraint firstItem="Xd1-mK-AwH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dzZ-sy-BRs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="s0b-yh-Ab6"/>
+                    <navigationItem key="navigationItem" title="Math-a-Mole" id="s0b-yh-Ab6">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="zQB-6C-2zb"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="lZZ-V4-V4e" id="PbA-qp-XSM"/>
                         <outlet property="bottomViewHeight" destination="pF7-XL-Bl8" id="zbf-u9-iyO"/>
@@ -276,7 +278,7 @@
             </objects>
             <point key="canvasLocation" x="1226" y="70"/>
         </scene>
-        <!--Flashcard View Controller-->
+        <!--Math-a-Mole-->
         <scene sceneID="h5n-R9-aOd">
             <objects>
                 <viewController id="b8a-Rw-nnB" customClass="FlashcardViewController" customModule="Math_a_Mole_1_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -319,7 +321,7 @@
                                                             <constraint firstAttribute="width" secondItem="ekj-Rm-UY8" secondAttribute="height" multiplier="1:1" id="L0h-Yo-ixb"/>
                                                         </constraints>
                                                         <color key="tintColor" red="1" green="0.73236685739999996" blue="0.34284220949999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" title="Button" backgroundImage="arrowtriangle.backward.fill" catalog="system"/>
+                                                        <state key="normal" backgroundImage="arrowtriangle.backward.fill" catalog="system"/>
                                                         <connections>
                                                             <action selector="backPressed:" destination="b8a-Rw-nnB" eventType="touchUpInside" id="Xi2-YK-5lU"/>
                                                         </connections>
@@ -366,41 +368,29 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-lv-agq">
-                                <rect key="frame" x="25" y="113.33333333333334" width="75" height="74.333333333333314"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="Yw4-IG-tFr"/>
-                                    <constraint firstAttribute="width" secondItem="LmC-lv-agq" secondAttribute="height" multiplier="1:1" id="Zau-1B-YHA"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" backgroundImage="homekit" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="homePressed:" destination="b8a-Rw-nnB" eventType="touchUpInside" id="w1F-hy-aKG"/>
-                                    <segue destination="xsq-Rl-Og1" kind="show" identifier="GoBackHome" id="F05-tE-4PN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tJu-ax-4SM"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
-                            <constraint firstItem="LmC-lv-agq" firstAttribute="top" secondItem="tJu-ax-4SM" secondAttribute="top" constant="25" id="254-Ne-si7"/>
                             <constraint firstItem="1Pi-vx-wRA" firstAttribute="top" secondItem="tJu-ax-4SM" secondAttribute="top" constant="150" id="GSt-9e-dez"/>
                             <constraint firstItem="1Pi-vx-wRA" firstAttribute="leading" secondItem="tJu-ax-4SM" secondAttribute="leading" constant="25" id="IUq-Lu-C0e"/>
                             <constraint firstItem="tJu-ax-4SM" firstAttribute="bottom" secondItem="1Pi-vx-wRA" secondAttribute="bottom" constant="150" id="OFJ-xz-aEL"/>
-                            <constraint firstItem="LmC-lv-agq" firstAttribute="leading" secondItem="tJu-ax-4SM" secondAttribute="leading" constant="25" id="ZJf-hM-OYf"/>
                             <constraint firstItem="tJu-ax-4SM" firstAttribute="trailing" secondItem="1Pi-vx-wRA" secondAttribute="trailing" constant="25" id="fGd-vx-kJr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jzJ-G1-zBb"/>
+                    <navigationItem key="navigationItem" title="Math-a-Mole" id="jzJ-G1-zBb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="gYF-A8-onN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="MbT-TK-0cE">
+                            <connections>
+                                <action selector="homeButtonPressed:" destination="b8a-Rw-nnB" id="h8y-jj-lf1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="ekj-Rm-UY8" id="2DO-ha-uDf"/>
                         <outlet property="bottomView" destination="Ahc-oC-732" id="jmG-Lf-sCy"/>
                         <outlet property="flipButton" destination="pMP-uZ-g2x" id="WJs-Eh-pOI"/>
                         <outlet property="forwardButton" destination="bTd-TN-EQR" id="1Vu-zR-vVs"/>
-                        <outlet property="homeButton" destination="LmC-lv-agq" id="Amu-qr-unt"/>
                         <outlet property="progressLabel" destination="U5d-Gg-aFg" id="SQd-Iq-jn4"/>
                         <outlet property="questionLabel" destination="f29-6h-fye" id="6bZ-Hj-0SU"/>
                         <outlet property="topView" destination="WwA-Yd-lOR" id="Gmh-pV-VEt"/>
@@ -410,7 +400,7 @@
             </objects>
             <point key="canvasLocation" x="2336.9230769230767" y="69.66824644549763"/>
         </scene>
-        <!--Welcome View Conntroller-->
+        <!--Math-a-Mole-->
         <scene sceneID="MHe-Vx-rnj">
             <objects>
                 <viewController id="did-PP-8gN" customClass="WelcomeViewConntroller" customModule="Math_a_Mole_1_0" customModuleProvider="target" sceneMemberID="viewController">
@@ -573,7 +563,9 @@
                             <constraint firstItem="kxW-2A-9br" firstAttribute="trailing" secondItem="f93-df-MAA" secondAttribute="trailing" id="zgc-hO-Fc4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="rB2-1y-4OT"/>
+                    <navigationItem key="navigationItem" title="Math-a-Mole" id="rB2-1y-4OT">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="PTj-dp-eyg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="advancedButton" destination="k8o-Mz-Bzr" id="Fw7-5o-LhA"/>
                         <outlet property="beginnerButton" destination="OEp-H3-p8S" id="A3n-2w-01L"/>
@@ -591,12 +583,12 @@
             </objects>
             <point key="canvasLocation" x="226.15384615384613" y="70.379146919431278"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Math-a-Mole-->
         <scene sceneID="aFm-mV-ahg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xsq-Rl-Og1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Om1-x1-dhT"/>
+                    <navigationItem key="navigationItem" title="Math-a-Mole" id="Om1-x1-dhT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vnv-f2-oqY">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -615,7 +607,6 @@
         <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
         <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

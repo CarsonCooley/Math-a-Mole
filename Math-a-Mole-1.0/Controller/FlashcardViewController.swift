@@ -30,6 +30,12 @@ class FlashcardViewController: UIViewController {
         views = [topView, bottomView]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+    }
+    
     @IBAction func flipPressed(_ sender: UIButton) {
         flashcards[currentFlashcardIndex].flip()
         self.updateFlashcard(change: 0)
@@ -42,6 +48,10 @@ class FlashcardViewController: UIViewController {
     
     @IBAction func backPressed(_ sender: UIButton) {
         updateFlashcard(change: -1)
+    }
+    
+    @IBAction func homeButtonPressed(_ sender: UIBarButtonItem) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func updateFlashcard(change: Int) {
@@ -61,14 +71,4 @@ class FlashcardViewController: UIViewController {
         }
     }
     
-    @IBAction func homePressed(_ sender: UIButton) {
-        flashcards.removeAll()
-        performSegue(withIdentifier: "GoBackHome", sender: self)
-        
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! WelcomeViewConntroller
-//
-//    }
 }

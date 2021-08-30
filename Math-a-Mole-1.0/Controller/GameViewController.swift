@@ -48,9 +48,16 @@ class GameViewController: UIViewController {
     var views: [UIView] = []
     var moleButtons: [UIButton] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         moleStack.isHidden = true
         
@@ -120,15 +127,15 @@ class GameViewController: UIViewController {
     
     @IBAction func startPressed(_ sender: UIButton) {
         if sender.currentTitle! == "START" {
+            
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.hidesBackButton = true
+            
             game.resetMoles()
             game.createQuestion()
-//            print(game.currentQuestion!.toString())
-//            print(game.currentQuestion!.dummyAnswers)
-//            print(game.currentQuestion!.dummyAnswers)
             game.setMoles(dummyAnswers: game.currentQuestion!.dummyAnswers)
             
             self.updateUI()
-            //self.startButton.isHidden = true
             self.moleStack.isHidden = false
             self.whatIsLabel.text = "What is..."
             
@@ -160,8 +167,6 @@ class GameViewController: UIViewController {
                 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
             }
         }
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -172,34 +177,25 @@ class GameViewController: UIViewController {
     @objc func updateCounter() {
         
         let progressPercentage = Float(secondsRemaining) / Float(totalTime)
-        
-        
         self.progressBar.progress = Float(progressPercentage)
-        
         
         if secondsRemaining > 0 {
             secondsRemaining -= 1
         } else {
             timer.invalidate()
-            
             self.startButton.isHidden = false
             self.moleStack.isHidden = true
-            
             game.end()
-            
             performSegue(withIdentifier: "AdvanceToFC", sender: self)
         }
     }
     
     func updateUI() {
-        
         self.questionLabel.text = self.game.currentQuestion?.toString()
         self.updateMoleArray()
-        
     }
     
     func updateMoleArray() {
-        
         var index: Int = 0
         for moleButton in self.moleButtons {
             moleButton.setTitle("\(self.game.moleArray[index].moleAnswer)", for: .normal)
@@ -210,7 +206,6 @@ class GameViewController: UIViewController {
                 moleButton.alpha = 1.0
             }
         }
-        
     }
 }
 
