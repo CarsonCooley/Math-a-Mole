@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3602C48126DDC95200AFA35E /* ColorCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */; };
 		361D109226C4618D009363B7 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361D109126C4618D009363B7 /* FlashcardViewController.swift */; };
 		3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7BF26B3054600EC1580 /* MathQuestion.swift */; };
 		3655B7C326B3057700EC1580 /* Solvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C226B3057700EC1580 /* Solvable.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorCatalog.xcassets; sourceTree = "<group>"; };
 		361D109126C4618D009363B7 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		3655B7BF26B3054600EC1580 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
 		3655B7C226B3057700EC1580 /* Solvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solvable.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				3655B7BB26B3025B00EC1580 /* View */,
 				3655B7BC26B3026900EC1580 /* Controller */,
 				366F9E5F268FD80000A5DD6F /* Assets.xcassets */,
+				3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */,
 				366F9E61268FD80000A5DD6F /* LaunchScreen.storyboard */,
 				366F9E64268FD80000A5DD6F /* Info.plist */,
 			);
@@ -172,6 +175,7 @@
 				366F9E63268FD80000A5DD6F /* LaunchScreen.storyboard in Resources */,
 				366F9E60268FD80000A5DD6F /* Assets.xcassets in Resources */,
 				366F9E5E268FD7FE00A5DD6F /* Main.storyboard in Resources */,
+				3602C48126DDC95200AFA35E /* ColorCatalog.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -67,12 +67,14 @@ class GameViewController: UIViewController {
         startButton.layer.cornerRadius = 10
         startButton.clipsToBounds = true
         
-        moleStack.isHidden = true
+        moleStack.isHidden = false
         
         moleButtons = [mole1, mole2, mole3, mole4, mole5, mole6, mole7, mole8, mole9, mole10, mole11, mole12]
         
         for moleButton in moleButtons {
             moleButton.setTitleColor(UIColor.white, for: .normal)
+            moleButton.backgroundColor = UIColor(named: "brandBrown")
+            moleButton.isEnabled = false
         }
         
         views = [topView, moleView, bottomView]
@@ -85,7 +87,7 @@ class GameViewController: UIViewController {
         bottomViewHeight.constant = mainView.frame.size.height / 10
         
         questionLabel.numberOfLines = 3
-        questionLabel.text = "Press the 'START' button to begin"
+        questionLabel.text = ""
         whatIsLabel.text = ""
         
         self.setGameParameters()
@@ -117,7 +119,7 @@ class GameViewController: UIViewController {
             game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 10
-            game.time = 90
+            game.time = 20
         } else {
             print("ERROR: game difficulty not captured")
         }
@@ -139,6 +141,10 @@ class GameViewController: UIViewController {
     
     @IBAction func startPressed(_ sender: UIButton) {
         if sender.currentTitle! == "START" {
+            
+            for moleButton in moleButtons {
+                moleButton.isEnabled = true
+            }
             
             self.navigationItem.leftBarButtonItem = nil
             self.navigationItem.hidesBackButton = true

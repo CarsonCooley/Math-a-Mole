@@ -27,8 +27,8 @@ class WelcomeViewConntroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor.init(red: 200/255, green: 50/255, blue: 200/255, alpha: 1.0)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.init(red: 100/255, green: 50/255, blue: 50/255, alpha: 1.0)]
+        navigationController?.navigationBar.barTintColor = UIColor(named: "brandBrown")
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         nextButton.alpha = 0.0
         
         difficultyButtons = [beginnerButton, intermediateButton, advancedButton, expertButton]
