@@ -73,7 +73,7 @@ class GameViewController: UIViewController {
         
         for moleButton in moleButtons {
             moleButton.setTitleColor(UIColor.white, for: .normal)
-            moleButton.backgroundColor = UIColor(named: "brandBrown")
+            moleButton.backgroundColor = UIColor(named: K.BrandColors.brown)
             moleButton.isEnabled = false
         }
         
@@ -208,7 +208,7 @@ class GameViewController: UIViewController {
             self.startButton.isHidden = false
             self.moleStack.isHidden = true
             game.end()
-            performSegue(withIdentifier: "AdvanceToFC", sender: self)
+            performSegue(withIdentifier: K.advanceToFCSegue, sender: self)
         }
     }
     

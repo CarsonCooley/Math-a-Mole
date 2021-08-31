@@ -42,8 +42,8 @@ class Game {
     }
     
     func checkUserAnswer(userAnswer: Int) {
-        print(currentQuestion?.toString())
-        print(currentQuestion?.answer)
+        print(currentQuestion?.toString() ?? "")
+        print(currentQuestion?.answer ?? "")
         if userAnswer == currentQuestion!.answer {
             print("Correct")
             numCorrectAnswers += 1

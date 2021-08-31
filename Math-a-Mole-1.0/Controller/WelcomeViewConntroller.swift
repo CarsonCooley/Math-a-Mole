@@ -23,11 +23,11 @@ class WelcomeViewConntroller: UIViewController {
     var difficultyButtons: [UIButton] = []
     var views: [UIView] = []
     
-    var activeDifficultySelected = ""
+    var activeDifficultySelected: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor(named: "brandBrown")
+        navigationController?.navigationBar.barTintColor = UIColor(named: K.BrandColors.brown)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         nextButton.alpha = 0.0
         
@@ -68,7 +68,7 @@ class WelcomeViewConntroller: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "AdvanceToGameplay", sender: self)
+        performSegue(withIdentifier: K.advanceToGameplaySegue, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,13 +78,13 @@ class WelcomeViewConntroller: UIViewController {
     
     func updateDescriptionLabel() {
         if self.activeDifficultySelected == "Beginner" {
-            self.descriptionLabel.text = "Whack some moles with some small addition and subtraction! Just 30 seconds."
+            self.descriptionLabel.text = K.DifficultyDescriptions.beginner
         } else if self.activeDifficultySelected == "Intermediate" {
-            self.descriptionLabel.text = "Step it up with some larger numbers. A full minute of mole-whacking fun!"
+            self.descriptionLabel.text = K.DifficultyDescriptions.intermediate
         } else if self.activeDifficultySelected == "Advanced" {
-            self.descriptionLabel.text = "Switch it up to some multiplication and division mole-whacking. A full minute of mole-whacking fun!"
+            self.descriptionLabel.text = K.DifficultyDescriptions.advanced
         } else if self.activeDifficultySelected == "Expert" {
-            self.descriptionLabel.text = "Additon. Subtraction. Multiplication. Division. How many moles can you whack in 90 seconds?"
+            self.descriptionLabel.text = K.DifficultyDescriptions.expert
         }
     }
     
