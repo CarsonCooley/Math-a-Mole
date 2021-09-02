@@ -51,6 +51,10 @@ class GameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        topViewHeight.constant = mainView.frame.size.height / 20 * 7
+        moleViewHeight.constant = mainView.frame.size.height / 20 * 10
+        bottomViewHeight.constant = mainView.frame.size.height / 20 * 3
+        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 5)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,8 +76,6 @@ class GameViewController: UIViewController {
         moleButtons = [mole1, mole2, mole3, mole4, mole5, mole6, mole7, mole8, mole9, mole10, mole11, mole12]
         
         for moleButton in moleButtons {
-            moleButton.setTitleColor(UIColor.white, for: .normal)
-            moleButton.backgroundColor = UIColor(named: K.BrandColors.brown)
             moleButton.isEnabled = false
         }
         
@@ -81,10 +83,6 @@ class GameViewController: UIViewController {
         for view in views {
             view.backgroundColor = UIColor.clear
         }
-        
-        topViewHeight.constant = mainView.frame.size.height / 5
-        moleViewHeight.constant = mainView.frame.size.height / 10 * 7
-        bottomViewHeight.constant = mainView.frame.size.height / 10
         
         questionLabel.numberOfLines = 3
         questionLabel.text = ""
@@ -126,7 +124,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func molePressed(_ sender: UIButton) {
-        game.checkUserAnswer(userAnswer: Int(sender.currentTitle!)!)
+        game.checkUserAnswer(userAnswer: Int(sender.currentTitle!) ?? -1)
         game.currentQuestion?.dummyAnswers.removeAll()
         game.resetMoles()
         game.createQuestion()
@@ -223,9 +221,10 @@ class GameViewController: UIViewController {
             moleButton.setTitle("\(self.game.moleArray[index].moleAnswer)", for: .normal)
             index += 1
             if moleButton.currentTitle == "-1" {
-                moleButton.alpha = 0.0
+                moleButton.setBackgroundImage(UIImage(named: "Mole_Hole.pdf"), for: .normal)
+                moleButton.setTitle("", for: .normal)
             } else {
-                moleButton.alpha = 1.0
+                moleButton.setBackgroundImage(UIImage(named: "Mole.pdf"), for: .normal)
             }
         }
     }

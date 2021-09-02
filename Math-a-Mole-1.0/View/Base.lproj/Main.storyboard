@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Farm_Vector2" translatesAutoresizingMaskIntoConstraints="NO" id="Fq9-El-bDv">
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xd1-mK-AwH" userLabel="Main Stack">
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <subviews>
@@ -43,13 +46,13 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 x 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCc-aw-3ZB">
                                                         <rect key="frame" x="0.0" y="86" width="390" height="65.666666666666686"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="55"/>
                                                         <nil key="highlightedColor"/>
                                                         <variation key="heightClass=compact-widthClass=compact">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                                         </variation>
                                                         <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="90"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
                                                         </variation>
                                                     </label>
                                                 </subviews>
@@ -57,49 +60,61 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="179.5" id="CyA-ws-ero"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="CyA-ws-ero"/>
                                             <constraint firstAttribute="trailing" secondItem="pkS-xa-wPE" secondAttribute="trailing" id="M4g-ZR-ML3"/>
                                             <constraint firstItem="pkS-xa-wPE" firstAttribute="leading" secondItem="df6-cw-vCk" secondAttribute="leading" id="Wac-fA-Gh4"/>
                                             <constraint firstItem="pkS-xa-wPE" firstAttribute="top" secondItem="df6-cw-vCk" secondAttribute="top" constant="10" id="vLi-r5-rSM"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="xVi-D8-F4P" userLabel="Mole View">
-                                        <rect key="frame" x="0.0" y="229.33333333333331" width="390" height="300.99999999999994"/>
+                                        <rect key="frame" x="0.0" y="229.33333333333329" width="390" height="424.66666666666674"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="left" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rHr-NO-Caj">
-                                                <rect key="frame" x="20" y="20.666666666666686" width="350" height="260"/>
+                                                <rect key="frame" x="20" y="82.333333333333371" width="350" height="260"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rZS-BE-Uci">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="80"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-gu-bWs">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-gu-bWs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="1"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="1" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1h-E5-62Y"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAW-WD-Gzd">
                                                                 <rect key="frame" x="90" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="2"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="2" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEV-0Y-3m8"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5A9-H8-8xs">
                                                                 <rect key="frame" x="180" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="3"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="3" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRP-CR-jMt"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPs-if-DAf">
                                                                 <rect key="frame" x="270" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="4"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="4" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gvs-N9-rXi"/>
                                                                 </connections>
@@ -114,32 +129,44 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shh-Bf-aTR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="5" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jH3-Cp-wFZ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frT-DO-QPl">
                                                                 <rect key="frame" x="90" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="6"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="6" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ExK-Cm-x4X"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOU-Rx-bNP">
                                                                 <rect key="frame" x="180" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="7"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="7" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUt-98-XTq"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkS-IX-AQO">
                                                                 <rect key="frame" x="270" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="8"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="8" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kxO-LF-fgE"/>
                                                                 </connections>
@@ -150,36 +177,48 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="48a-5B-6F2">
-                                                        <rect key="frame" x="0.0" y="180" width="350" height="80"/>
+                                                        <rect key="frame" x="0.0" y="179.99999999999994" width="350" height="80"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-Uh-mOx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="9"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="9" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEW-Tm-9Ns"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLp-zb-0Yc">
                                                                 <rect key="frame" x="90" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="10"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="10" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N5X-Px-YZT"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeR-iL-N5U">
                                                                 <rect key="frame" x="180" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="11"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="11" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aoQ-m5-vtn"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2t-aR-XIH">
                                                                 <rect key="frame" x="270" y="0.0" width="80" height="80"/>
-                                                                <color key="backgroundColor" red="0.48567033679999999" green="0.34456691410000001" blue="0.041591008919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="12"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                                <state key="normal" title="12" backgroundImage="Mole_Hole">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="molePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t89-NZ-6x6"/>
                                                                 </connections>
@@ -195,18 +234,22 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="rHr-NO-Caj" firstAttribute="centerY" secondItem="xVi-D8-F4P" secondAttribute="centerY" id="HJD-Z3-Mhk"/>
-                                            <constraint firstAttribute="trailing" secondItem="rHr-NO-Caj" secondAttribute="trailing" constant="20" id="WIP-mh-Hdr"/>
-                                            <constraint firstAttribute="height" constant="319.5" id="Zac-tg-aFY"/>
+                                            <constraint firstAttribute="trailing" secondItem="rHr-NO-Caj" secondAttribute="trailing" constant="20" id="WIP-mh-Hdr">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="135"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="Zac-tg-aFY"/>
                                             <constraint firstItem="rHr-NO-Caj" firstAttribute="centerX" secondItem="xVi-D8-F4P" secondAttribute="centerX" id="ajH-Co-qnh"/>
-                                            <constraint firstItem="rHr-NO-Caj" firstAttribute="leading" secondItem="xVi-D8-F4P" secondAttribute="leading" constant="20" id="pmP-ri-jcx"/>
+                                            <constraint firstItem="rHr-NO-Caj" firstAttribute="leading" secondItem="xVi-D8-F4P" secondAttribute="leading" constant="20" id="pmP-ri-jcx">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="135"/>
+                                            </constraint>
                                             <constraint firstItem="rHr-NO-Caj" firstAttribute="centerX" secondItem="xVi-D8-F4P" secondAttribute="centerX" id="xOI-QJ-GMF"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-V4-V4e" userLabel="Bottom View">
-                                        <rect key="frame" x="0.0" y="531.33333333333337" width="390" height="190.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="655" width="390" height="67"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJP-tm-Hop">
-                                                <rect key="frame" x="100.66666666666669" y="67.333333333333258" width="189" height="56"/>
+                                                <rect key="frame" x="100.66666666666669" y="5.6666666666666288" width="189" height="56"/>
                                                 <color key="backgroundColor" name="brandDarkBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <inset key="contentEdgeInsets" minX="50" minY="10" maxX="50" maxY="10"/>
@@ -225,7 +268,7 @@
                                         <constraints>
                                             <constraint firstItem="UJP-tm-Hop" firstAttribute="centerX" secondItem="lZZ-V4-V4e" secondAttribute="centerX" id="JCC-tL-jyL"/>
                                             <constraint firstItem="UJP-tm-Hop" firstAttribute="centerY" secondItem="lZZ-V4-V4e" secondAttribute="centerY" id="bVx-6l-4qV"/>
-                                            <constraint firstAttribute="height" constant="67" id="pF7-XL-Bl8"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="pF7-XL-Bl8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -239,8 +282,12 @@
                         <constraints>
                             <constraint firstItem="Xd1-mK-AwH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CUV-0B-gXo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xd1-mK-AwH" secondAttribute="bottom" id="G0h-Bm-1Z9"/>
+                            <constraint firstItem="Fq9-El-bDv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KYs-Ky-PGG"/>
                             <constraint firstItem="Xd1-mK-AwH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OaW-y3-F5O"/>
+                            <constraint firstAttribute="bottom" secondItem="Fq9-El-bDv" secondAttribute="bottom" id="TUR-LT-CiM"/>
                             <constraint firstItem="Xd1-mK-AwH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dzZ-sy-BRs"/>
+                            <constraint firstItem="Fq9-El-bDv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="moT-bO-DGV"/>
+                            <constraint firstItem="Fq9-El-bDv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ua1-xS-4C5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Math-a-Mole" id="s0b-yh-Ab6">
@@ -283,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="70"/>
+            <point key="canvasLocation" x="1224.6153846153845" y="69.66824644549763"/>
         </scene>
         <!--Math-a-Mole-->
         <scene sceneID="h5n-R9-aOd">
@@ -293,22 +340,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Notebook" translatesAutoresizingMaskIntoConstraints="NO" id="EFp-mc-fDm">
+                                <rect key="frame" x="-100" y="38" width="590" height="856"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1Pi-vx-wRA">
-                                <rect key="frame" x="25" y="238" width="340" height="422"/>
+                                <rect key="frame" x="50" y="188" width="315" height="572"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwA-Yd-lOR">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="198.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="273.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f29-6h-fye">
-                                                <rect key="frame" x="25" y="69.333333333333314" width="290" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <rect key="frame" x="25" y="106.66666666666669" width="265" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="85"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="85"/>
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" name="brandOffWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="f29-6h-fye" secondAttribute="trailing" constant="25" id="5e6-ul-xA2"/>
                                             <constraint firstItem="f29-6h-fye" firstAttribute="leading" secondItem="WwA-Yd-lOR" secondAttribute="leading" constant="25" id="EPD-G7-voL"/>
@@ -316,13 +366,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahc-oC-732">
-                                        <rect key="frame" x="0.0" y="223.66666666666669" width="340" height="198.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="298.66666666666674" width="315" height="273.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="l2x-l3-70J">
-                                                <rect key="frame" x="25" y="25" width="290" height="80"/>
+                                                <rect key="frame" x="25" y="25" width="265" height="71.666666666666671"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekj-Rm-UY8">
-                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="80" height="75"/>
+                                                        <rect key="frame" x="0.0" y="2.6666666666666643" width="71.666666666666671" height="66.666666666666686"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="ekj-Rm-UY8" secondAttribute="height" multiplier="1:1" id="L0h-Yo-ixb"/>
                                                         </constraints>
@@ -333,7 +383,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMP-uZ-g2x">
-                                                        <rect key="frame" x="105" y="-0.6666666666666643" width="80" height="79.666666666666671"/>
+                                                        <rect key="frame" x="96.666666666666657" y="-0.6666666666666714" width="71.666666666666657" height="71.333333333333343"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="brandLightGreen"/>
                                                         <state key="normal" backgroundImage="arrow.counterclockwise" catalog="system"/>
@@ -342,7 +392,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-TN-EQR">
-                                                        <rect key="frame" x="210" y="2.6666666666666643" width="80" height="75"/>
+                                                        <rect key="frame" x="193.33333333333331" y="2.6666666666666643" width="71.666666666666686" height="66.666666666666686"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="brandLightGreen"/>
                                                         <state key="normal" backgroundImage="arrowtriangle.right.fill" catalog="system"/>
@@ -354,9 +404,8 @@
                                                 <variation key="heightClass=regular-widthClass=regular" spacing="50"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5d-Gg-aFg">
-                                                <rect key="frame" x="129" y="154.99999999999994" width="82.333333333333314" height="42"/>
+                                                <rect key="frame" x="116.33333333333334" y="146.66666666666669" width="82.333333333333343" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                <color key="textColor" name="brandOffWhite"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
                                                     <fontDescription key="fontDescription" type="system" pointSize="65"/>
@@ -376,12 +425,21 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tJu-ax-4SM"/>
-                        <color key="backgroundColor" name="brandDarkBlue"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="1Pi-vx-wRA" firstAttribute="top" secondItem="tJu-ax-4SM" secondAttribute="top" constant="150" id="GSt-9e-dez"/>
-                            <constraint firstItem="1Pi-vx-wRA" firstAttribute="leading" secondItem="tJu-ax-4SM" secondAttribute="leading" constant="25" id="IUq-Lu-C0e"/>
-                            <constraint firstItem="tJu-ax-4SM" firstAttribute="bottom" secondItem="1Pi-vx-wRA" secondAttribute="bottom" constant="150" id="OFJ-xz-aEL"/>
-                            <constraint firstItem="tJu-ax-4SM" firstAttribute="trailing" secondItem="1Pi-vx-wRA" secondAttribute="trailing" constant="25" id="fGd-vx-kJr"/>
+                            <constraint firstItem="EFp-mc-fDm" firstAttribute="leading" secondItem="tJu-ax-4SM" secondAttribute="leading" constant="-100" id="30T-An-vzT"/>
+                            <constraint firstItem="EFp-mc-fDm" firstAttribute="trailing" secondItem="tJu-ax-4SM" secondAttribute="trailing" constant="100" id="5Ew-Iu-fDa"/>
+                            <constraint firstItem="1Pi-vx-wRA" firstAttribute="top" secondItem="tJu-ax-4SM" secondAttribute="top" constant="100" id="GSt-9e-dez"/>
+                            <constraint firstItem="1Pi-vx-wRA" firstAttribute="leading" secondItem="tJu-ax-4SM" secondAttribute="leading" constant="50" id="IUq-Lu-C0e">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstItem="tJu-ax-4SM" firstAttribute="bottom" secondItem="1Pi-vx-wRA" secondAttribute="bottom" constant="50" id="OFJ-xz-aEL"/>
+                            <constraint firstItem="EFp-mc-fDm" firstAttribute="top" secondItem="tJu-ax-4SM" secondAttribute="top" constant="-50" id="fFP-Cd-d8T"/>
+                            <constraint firstItem="tJu-ax-4SM" firstAttribute="trailing" secondItem="1Pi-vx-wRA" secondAttribute="trailing" constant="25" id="fGd-vx-kJr">
+                                <variation key="heightClass=regular-widthClass=regular" constant="100"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="EFp-mc-fDm" secondAttribute="bottom" constant="-50" id="yVn-jm-fFa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Math-a-Mole" id="jzJ-G1-zBb">
@@ -405,7 +463,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFo-sX-K4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336.9230769230767" y="69.66824644549763"/>
+            <point key="canvasLocation" x="2181.5384615384614" y="69.66824644549763"/>
         </scene>
         <!--Math-a-Mole-->
         <scene sceneID="MHe-Vx-rnj">
@@ -415,19 +473,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Farm_Vector" translatesAutoresizingMaskIntoConstraints="NO" id="POk-Wa-N9I">
+                                <rect key="frame" x="0.0" y="88" width="390" height="756"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kxW-2A-9br">
-                                <rect key="frame" x="0.0" y="113" width="390" height="681"/>
+                                <rect key="frame" x="0.0" y="113" width="390" height="701"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwm-eC-8NQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="227"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="233.66666666666666"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At6-cP-03l">
-                                                <rect key="frame" x="87.666666666666671" y="79" width="214.66666666666663" height="48"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <rect key="frame" x="79.666666666666686" y="85.666666666666657" width="231" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=regular">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="75"/>
                                                 </variation>
                                             </label>
                                         </subviews>
@@ -438,10 +501,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kf1-5i-2tL">
-                                        <rect key="frame" x="0.0" y="227" width="390" height="227"/>
+                                        <rect key="frame" x="0.0" y="233.66666666666669" width="390" height="233.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-8s-ju1">
-                                                <rect key="frame" x="75" y="19" width="240" height="189"/>
+                                                <rect key="frame" x="75" y="22.333333333333314" width="240" height="189"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEp-H3-p8S">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="36"/>
@@ -504,6 +567,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <variation key="heightClass=regular-widthClass=regular" spacing="25"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -519,22 +583,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZS-Xw-ZlU">
-                                        <rect key="frame" x="0.0" y="454" width="390" height="227"/>
+                                        <rect key="frame" x="0.0" y="467.33333333333343" width="390" height="233.66666666666669"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kXz-Ma-gWQ">
-                                                <rect key="frame" x="25" y="25" width="340" height="202"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kXz-Ma-gWQ">
+                                                <rect key="frame" x="25" y="15" width="340" height="218.66666666666666"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moH-W7-gtC">
                                                         <rect key="frame" x="0.0" y="0.0" width="340" height="0.0"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <color key="textColor" name="brandBrown"/>
                                                         <nil key="highlightedColor"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
-                                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="38"/>
                                                         </variation>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiC-dS-0cU">
-                                                        <rect key="frame" x="0.0" y="158" width="340" height="44"/>
+                                                        <rect key="frame" x="0.0" y="174.66666666666663" width="340" height="44"/>
                                                         <color key="backgroundColor" name="brandBrown"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <inset key="contentEdgeInsets" minX="50" minY="10" maxX="50" maxY="10"/>
@@ -553,7 +617,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="kXz-Ma-gWQ" firstAttribute="top" secondItem="mZS-Xw-ZlU" secondAttribute="top" constant="25" id="61a-Fx-Y8v"/>
+                                            <constraint firstItem="kXz-Ma-gWQ" firstAttribute="top" secondItem="mZS-Xw-ZlU" secondAttribute="top" constant="15" id="61a-Fx-Y8v">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="45"/>
+                                            </constraint>
                                             <constraint firstItem="kXz-Ma-gWQ" firstAttribute="leading" secondItem="mZS-Xw-ZlU" secondAttribute="leading" constant="25" id="Efu-w4-qb3"/>
                                             <constraint firstAttribute="bottom" secondItem="kXz-Ma-gWQ" secondAttribute="bottom" id="JPH-pD-TdV"/>
                                             <constraint firstAttribute="trailing" secondItem="kXz-Ma-gWQ" secondAttribute="trailing" constant="25" id="cDL-1i-b8G"/>
@@ -566,9 +632,13 @@
                         <color key="backgroundColor" name="brandLightBlue"/>
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="POk-Wa-N9I" firstAttribute="top" secondItem="f93-df-MAA" secondAttribute="top" id="0cv-99-JEC"/>
+                            <constraint firstAttribute="bottom" secondItem="POk-Wa-N9I" secondAttribute="bottom" id="2Y0-ei-gtR"/>
                             <constraint firstItem="kxW-2A-9br" firstAttribute="leading" secondItem="f93-df-MAA" secondAttribute="leading" id="Ks1-PU-Dou"/>
-                            <constraint firstAttribute="bottom" secondItem="kxW-2A-9br" secondAttribute="bottom" constant="50" id="k5r-gg-WbF"/>
+                            <constraint firstAttribute="bottom" secondItem="kxW-2A-9br" secondAttribute="bottom" constant="30" id="k5r-gg-WbF"/>
                             <constraint firstItem="kxW-2A-9br" firstAttribute="top" secondItem="f93-df-MAA" secondAttribute="top" constant="25" id="kjH-TP-clL"/>
+                            <constraint firstItem="POk-Wa-N9I" firstAttribute="leading" secondItem="f93-df-MAA" secondAttribute="leading" id="vqG-pM-III"/>
+                            <constraint firstItem="POk-Wa-N9I" firstAttribute="trailing" secondItem="f93-df-MAA" secondAttribute="trailing" id="w9u-2D-Kci"/>
                             <constraint firstItem="kxW-2A-9br" firstAttribute="trailing" secondItem="f93-df-MAA" secondAttribute="trailing" id="zgc-hO-Fc4"/>
                         </constraints>
                     </view>
@@ -590,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtY-Lo-yVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="226.15384615384613" y="70.379146919431278"/>
+            <point key="canvasLocation" x="281.53846153846155" y="69.66824644549763"/>
         </scene>
         <!--Math-a-Mole-->
         <scene sceneID="aFm-mV-ahg">
@@ -609,10 +679,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dO9-3t-Hfe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703.07692307692309" y="70.379146919431278"/>
+            <point key="canvasLocation" x="-722" y="70"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Farm_Vector" width="791" height="495"/>
+        <image name="Farm_Vector2" width="700" height="300"/>
+        <image name="Mole_Hole" width="4536" height="2044"/>
+        <image name="Notebook" width="431" height="431"/>
         <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
         <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>
@@ -620,19 +694,16 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="brandBrown">
-            <color red="0.46078433394432067" green="0.34411765933036803" blue="0.27843139767646791" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.460999995470047" green="0.34400001168251038" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="brandDarkBlue">
-            <color red="0.25098039220000001" green="0.38431372549999998" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.25099998712539673" green="0.38400000333786011" blue="0.46700000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="brandLightBlue">
-            <color red="0.36216759679999999" green="0.74006384609999998" blue="0.98042362930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.3619999885559082" green="0.74000000953674316" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="brandLightGreen">
-            <color red="0.45686276555061339" green="0.78235297203063969" blue="0.69215689897537236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="brandOffWhite">
-            <color red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.35699999332427979" green="0.68199998140335083" blue="0.59200000762939453" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
