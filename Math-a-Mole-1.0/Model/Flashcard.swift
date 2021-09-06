@@ -10,13 +10,15 @@ import Foundation
 class Flashcard {
     let question: String
     let answer: Int
+    var incorrectAnswer: Int
     
     var answerShowing: Bool = false
     var textShowing: String = ""
     
-    init(question: String, answer: Int) {
+    init(question: String, answer: Int, incorrectAnswer: Int) {
         self.question = question
         self.answer = answer
+        self.incorrectAnswer = incorrectAnswer
         self.textShowing = question
     }
     

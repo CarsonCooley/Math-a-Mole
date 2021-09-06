@@ -9,21 +9,20 @@
 /* Begin PBXBuildFile section */
 		3602C48126DDC95200AFA35E /* ColorCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */; };
 		3602C48426DDDB7100AFA35E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C48326DDDB7100AFA35E /* Constants.swift */; };
-		3602C48E26DEB3D000AFA35E /* Farm_Vector.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3602C48D26DEB3CF00AFA35E /* Farm_Vector.pdf */; };
-		3602C49126DEBE3B00AFA35E /* Farm_Vector2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3602C49026DEBE3B00AFA35E /* Farm_Vector2.pdf */; };
-		3602C49426DF1CA500AFA35E /* Mole_Hole.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3602C49326DF1CA500AFA35E /* Mole_Hole.pdf */; };
-		3602C49726DF286400AFA35E /* Mole.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3602C49626DF286400AFA35E /* Mole.pdf */; };
-		3602C49A26E013F300AFA35E /* Notebook.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3602C49926E013F200AFA35E /* Notebook.pdf */; };
-		361D109226C4618D009363B7 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361D109126C4618D009363B7 /* FlashcardViewController.swift */; };
+		3602C4BF26E314D000AFA35E /* CumulativeFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C4BE26E314D000AFA35E /* CumulativeFCViewController.swift */; };
+		3602C4C326E3157900AFA35E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C4C226E3157900AFA35E /* StatisticsViewController.swift */; };
+		3602C4C726E317DE00AFA35E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C4C626E317DE00AFA35E /* WelcomeViewController.swift */; };
+		361D109226C4618D009363B7 /* CurrentGameFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */; };
+		363F39C726E5555200D47567 /* Empty_Mole_Hole.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */; };
 		3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7BF26B3054600EC1580 /* MathQuestion.swift */; };
 		3655B7C326B3057700EC1580 /* Solvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C226B3057700EC1580 /* Solvable.swift */; };
 		3655B7C626B305EA00EC1580 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C526B305EA00EC1580 /* Game.swift */; };
 		3655B7C926B3062B00EC1580 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C826B3062B00EC1580 /* Flashcard.swift */; };
 		3655B7CC26B3072400EC1580 /* Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7CB26B3072400EC1580 /* Mole.swift */; };
-		3662084226BB9FAF00DB0E5C /* WelcomeViewConntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */; };
+		3662084226BB9FAF00DB0E5C /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662084126BB9FAF00DB0E5C /* ModeSelectViewController.swift */; };
 		366F9E57268FD7FE00A5DD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */; };
 		366F9E59268FD7FE00A5DD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */; };
-		366F9E5B268FD7FE00A5DD6F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */; };
+		366F9E5B268FD7FE00A5DD6F /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E5A268FD7FE00A5DD6F /* GameplayViewController.swift */; };
 		366F9E5E268FD7FE00A5DD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366F9E5C268FD7FE00A5DD6F /* Main.storyboard */; };
 		366F9E60268FD80000A5DD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366F9E5F268FD80000A5DD6F /* Assets.xcassets */; };
 		366F9E63268FD80000A5DD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366F9E61268FD80000A5DD6F /* LaunchScreen.storyboard */; };
@@ -32,22 +31,21 @@
 /* Begin PBXFileReference section */
 		3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorCatalog.xcassets; sourceTree = "<group>"; };
 		3602C48326DDDB7100AFA35E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3602C48D26DEB3CF00AFA35E /* Farm_Vector.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Farm_Vector.pdf; sourceTree = "<group>"; };
-		3602C49026DEBE3B00AFA35E /* Farm_Vector2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Farm_Vector2.pdf; sourceTree = "<group>"; };
-		3602C49326DF1CA500AFA35E /* Mole_Hole.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mole_Hole.pdf; sourceTree = "<group>"; };
-		3602C49626DF286400AFA35E /* Mole.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Mole.pdf; sourceTree = "<group>"; };
-		3602C49926E013F200AFA35E /* Notebook.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Notebook.pdf; sourceTree = "<group>"; };
-		361D109126C4618D009363B7 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
+		3602C4BE26E314D000AFA35E /* CumulativeFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CumulativeFCViewController.swift; sourceTree = "<group>"; };
+		3602C4C226E3157900AFA35E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		3602C4C626E317DE00AFA35E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGameFCViewController.swift; sourceTree = "<group>"; };
+		363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Empty_Mole_Hole.pdf; sourceTree = "<group>"; };
 		3655B7BF26B3054600EC1580 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
 		3655B7C226B3057700EC1580 /* Solvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solvable.swift; sourceTree = "<group>"; };
 		3655B7C526B305EA00EC1580 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3655B7C826B3062B00EC1580 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		3655B7CB26B3072400EC1580 /* Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mole.swift; sourceTree = "<group>"; };
-		3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewConntroller.swift; sourceTree = "<group>"; };
+		3662084126BB9FAF00DB0E5C /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
 		366F9E53268FD7FE00A5DD6F /* Math-a-Mole-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-a-Mole-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		366F9E5A268FD7FE00A5DD6F /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		366F9E5D268FD7FE00A5DD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		366F9E5F268FD80000A5DD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		366F9E62268FD80000A5DD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,19 +78,23 @@
 		3655B7BB26B3025B00EC1580 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				366F9E61268FD80000A5DD6F /* LaunchScreen.storyboard */,
 				366F9E5C268FD7FE00A5DD6F /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		3655B7BC26B3026900EC1580 /* Controller */ = {
+		3655B7BC26B3026900EC1580 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				366F9E5A268FD7FE00A5DD6F /* GameViewController.swift */,
-				3662084126BB9FAF00DB0E5C /* WelcomeViewConntroller.swift */,
-				361D109126C4618D009363B7 /* FlashcardViewController.swift */,
+				3602C4C626E317DE00AFA35E /* WelcomeViewController.swift */,
+				3662084126BB9FAF00DB0E5C /* ModeSelectViewController.swift */,
+				366F9E5A268FD7FE00A5DD6F /* GameplayViewController.swift */,
+				3602C4C226E3157900AFA35E /* StatisticsViewController.swift */,
+				361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */,
+				3602C4BE26E314D000AFA35E /* CumulativeFCViewController.swift */,
 			);
-			path = Controller;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		366F9E4A268FD7FE00A5DD6F = {
@@ -118,16 +120,11 @@
 				366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */,
 				3655B7B926B3023000EC1580 /* Model */,
 				3655B7BB26B3025B00EC1580 /* View */,
-				3655B7BC26B3026900EC1580 /* Controller */,
+				3655B7BC26B3026900EC1580 /* View Controllers */,
 				366F9E5F268FD80000A5DD6F /* Assets.xcassets */,
 				3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */,
+				363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */,
 				3602C48326DDDB7100AFA35E /* Constants.swift */,
-				366F9E61268FD80000A5DD6F /* LaunchScreen.storyboard */,
-				3602C48D26DEB3CF00AFA35E /* Farm_Vector.pdf */,
-				3602C49026DEBE3B00AFA35E /* Farm_Vector2.pdf */,
-				3602C49326DF1CA500AFA35E /* Mole_Hole.pdf */,
-				3602C49626DF286400AFA35E /* Mole.pdf */,
-				3602C49926E013F200AFA35E /* Notebook.pdf */,
 				366F9E64268FD80000A5DD6F /* Info.plist */,
 			);
 			path = "Math-a-Mole-1.0";
@@ -192,13 +189,9 @@
 			files = (
 				366F9E63268FD80000A5DD6F /* LaunchScreen.storyboard in Resources */,
 				366F9E60268FD80000A5DD6F /* Assets.xcassets in Resources */,
-				3602C49A26E013F300AFA35E /* Notebook.pdf in Resources */,
-				3602C49126DEBE3B00AFA35E /* Farm_Vector2.pdf in Resources */,
 				366F9E5E268FD7FE00A5DD6F /* Main.storyboard in Resources */,
 				3602C48126DDC95200AFA35E /* ColorCatalog.xcassets in Resources */,
-				3602C49726DF286400AFA35E /* Mole.pdf in Resources */,
-				3602C49426DF1CA500AFA35E /* Mole_Hole.pdf in Resources */,
-				3602C48E26DEB3D000AFA35E /* Farm_Vector.pdf in Resources */,
+				363F39C726E5555200D47567 /* Empty_Mole_Hole.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,17 +202,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3662084226BB9FAF00DB0E5C /* WelcomeViewConntroller.swift in Sources */,
+				3602C4BF26E314D000AFA35E /* CumulativeFCViewController.swift in Sources */,
+				3662084226BB9FAF00DB0E5C /* ModeSelectViewController.swift in Sources */,
 				3602C48426DDDB7100AFA35E /* Constants.swift in Sources */,
-				366F9E5B268FD7FE00A5DD6F /* GameViewController.swift in Sources */,
+				366F9E5B268FD7FE00A5DD6F /* GameplayViewController.swift in Sources */,
 				3655B7C626B305EA00EC1580 /* Game.swift in Sources */,
 				3655B7CC26B3072400EC1580 /* Mole.swift in Sources */,
 				3655B7C326B3057700EC1580 /* Solvable.swift in Sources */,
 				366F9E57268FD7FE00A5DD6F /* AppDelegate.swift in Sources */,
 				366F9E59268FD7FE00A5DD6F /* SceneDelegate.swift in Sources */,
-				361D109226C4618D009363B7 /* FlashcardViewController.swift in Sources */,
+				361D109226C4618D009363B7 /* CurrentGameFCViewController.swift in Sources */,
 				3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */,
 				3655B7C926B3062B00EC1580 /* Flashcard.swift in Sources */,
+				3602C4C326E3157900AFA35E /* StatisticsViewController.swift in Sources */,
+				3602C4C726E317DE00AFA35E /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

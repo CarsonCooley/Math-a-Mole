@@ -18,6 +18,8 @@ class Game {
     var currentQuestion: MathQuestion? = nil
     var userAnswer: Int = -1
     var numCorrectAnswers: Int = 0
+    var numIncorrectAnswers: Int = 0
+    var totalScore: Int = 0
     var questionTypes: [MathQuestion] = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
     var moleArray: [Mole] = []
     var flashcards: [Flashcard] = []
@@ -42,20 +44,18 @@ class Game {
     }
     
     func checkUserAnswer(userAnswer: Int) {
-        print(currentQuestion?.toString() ?? "")
-        print(currentQuestion?.answer ?? "")
         if userAnswer == currentQuestion!.answer {
-            print("Correct")
             numCorrectAnswers += 1
+            totalScore += 1
         } else {
-            print("Incorrect")
-            let newFlashcard = Flashcard(question: currentQuestion!.toString(), answer: currentQuestion!.answer)
-            flashcards.append(newFlashcard)
-            for flashcard in flashcards {
-                print("\(flashcard.question) = \(flashcard.answer)" )
+            numIncorrectAnswers += 1
+            if totalScore > 0 {
+                totalScore -= 1
             }
+            
+            let newFlashcard = Flashcard(question: currentQuestion!.toString(), answer: currentQuestion!.answer, incorrectAnswer: userAnswer)
+            flashcards.append(newFlashcard)
         }
-        print("")
     }
     
     func createQuestion() {
@@ -88,7 +88,6 @@ class Game {
     
     func end() {
         currentQuestion = nil
-        numCorrectAnswers = 0
     }
     
 }
