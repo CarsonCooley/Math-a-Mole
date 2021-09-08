@@ -23,6 +23,8 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
         correctLabel.text = "Correct Answers: \(numCorrectAnswers)"
         incorrectLabel.text = "Incorrect Answers: \(numIncorrectAnswers)"
         scoreLabel.text = "Total Score: \(totalScore)"
@@ -31,6 +33,11 @@ class StatisticsViewController: UIViewController {
     
     @IBAction func nextPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: K.Segues.advanceToGameFC, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! CurrentGameFCViewController
+        vc.flashcards = self.flashcards
     }
     
     

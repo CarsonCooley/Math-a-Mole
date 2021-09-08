@@ -46,11 +46,22 @@ class CurrentGameFCViewController: UIViewController {
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        updateFlashcard(change: 1)
+        if currentFlashcardIndex == flashcards.count - 1 {
+            currentFlashcardIndex = 0
+            updateFlashcard(change: 0)
+        } else {
+            updateFlashcard(change: 1)
+        }
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
-        updateFlashcard(change: -1)
+        if currentFlashcardIndex == 0 {
+            currentFlashcardIndex = flashcards.count - 1
+            updateFlashcard(change: 0)
+        } else {
+            updateFlashcard(change: -1)
+        }
+        
     }
     
     @IBAction func homeButtonPressed(_ sender: UIBarButtonItem) {
@@ -59,6 +70,17 @@ class CurrentGameFCViewController: UIViewController {
     
     @IBAction func allCardsPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: K.Segues.advanceToCumulativeFC, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! CumulativeFCViewController
+        vc.flashcards = self.flashcards
+    }
+    
+    @IBAction func shufflePressed(_ sender: UIButton) {
+        flashcards.shuffle()
+        currentFlashcardIndex = 0
+        updateFlashcard(change: 0)
     }
     
     func updateFlashcard(change: Int) {
@@ -84,8 +106,6 @@ class CurrentGameFCViewController: UIViewController {
                 incorrectAnswerLabel.text = "You Answered: \(flashcards[currentFlashcardIndex].incorrectAnswer)"
                 incorrectAnswerLabel.isHidden = false
             }
-            
         }
     }
-    
 }

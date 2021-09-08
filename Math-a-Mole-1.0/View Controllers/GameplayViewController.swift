@@ -72,10 +72,6 @@ class GameplayViewController: UIViewController {
             highScores = scores
         }
         
-        for score in highScores {
-            print(score)
-        }
-        
         exitButton.isEnabled = true
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.hidesBackButton = true
@@ -208,7 +204,6 @@ class GameplayViewController: UIViewController {
         vc.numCorrectAnswers = self.game.numCorrectAnswers
         vc.numIncorrectAnswers = self.game.numIncorrectAnswers
         vc.totalScore = self.game.totalScore
-        print(self.highScore)
         vc.highScore = self.highScore
     }
     
@@ -243,25 +238,12 @@ class GameplayViewController: UIViewController {
             print("ERROR: game difficulty not captured")
         }
         
-        for score in highScores {
-            print(score)
-        }
-        
-        print()
-        
         if game.totalScore > highScores[highScoreIndex] {
             highScores[highScoreIndex] = game.totalScore
         }
         
         highScore = highScores[highScoreIndex]
-        
-        for score in highScores {
-            print(score)
-        }
-        
-        print()
-        
-        print(highScore)
+
     }
     
     func updateUI() {
