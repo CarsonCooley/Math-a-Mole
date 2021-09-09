@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flashcard {
+class Flashcard: Codable {
     let question: String
     let answer: Int
     var incorrectAnswer: Int

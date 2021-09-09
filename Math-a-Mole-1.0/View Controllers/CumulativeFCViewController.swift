@@ -23,16 +23,30 @@ class CumulativeFCViewController: UIViewController {
     var views: [UIView] = []
     
     var flashcards: [Flashcard] = []
+    var dataPersistantFlashcards: [Flashcard] = []
     var currentFlashcardIndex = 0
 
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Flashcards.plist")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         topView.layer.cornerRadius = 20
         topView.clipsToBounds = true
-        self.updateFlashcard(change: 0)
         views = [topView, bottomView]
+        
+        loadFlashcards()
+        
+        for flashcard in dataPersistantFlashcards {
+            flashcards.append(flashcard)
+        }
+        
+        self.updateFlashcard(change: 0)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        saveFlashcards()
     }
     
 
@@ -86,13 +100,41 @@ class CumulativeFCViewController: UIViewController {
         } else if currentFlashcardIndex == flashcards.count {
             currentFlashcardIndex -= 1
         }
-
         if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < flashcards.count) {
+            
+            if questionLabel.text == "\(flashcards[currentFlashcardIndex].answer)" && change != 0 {
+                flashcards[currentFlashcardIndex].flip()
+            }
             
             currentFlashcardIndex += change
             
             questionLabel.text = flashcards[currentFlashcardIndex].textShowing
             progressLabel.text = "\(currentFlashcardIndex + 1) / \(flashcards.count)"
+        }
+    }
+    
+    func saveFlashcards() {
+        
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(flashcards)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding flashcard array: \(error)")
+        }
+    }
+    
+    func loadFlashcards() {
+        
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                dataPersistantFlashcards = try decoder.decode([Flashcard].self, from: data)
+            } catch {
+                print("Error decoding flashcard array \(error)")
+            }
+            
         }
     }
     

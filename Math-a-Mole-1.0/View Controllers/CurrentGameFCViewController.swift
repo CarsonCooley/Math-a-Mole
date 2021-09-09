@@ -26,6 +26,10 @@ class CurrentGameFCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
+        
         incorrectAnswerLabel.isHidden = true
         topView.layer.cornerRadius = 20
         topView.clipsToBounds = true
@@ -64,10 +68,6 @@ class CurrentGameFCViewController: UIViewController {
         
     }
     
-    @IBAction func homeButtonPressed(_ sender: UIBarButtonItem) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
     @IBAction func allCardsPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: K.Segues.advanceToCumulativeFC, sender: self)
     }
@@ -91,9 +91,11 @@ class CurrentGameFCViewController: UIViewController {
             flipButton.isHidden = true
             progressLabel.isHidden = true
             incorrectAnswerLabel.isHidden = true
-        }
-        
-        if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < flashcards.count) {
+        } else if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < flashcards.count) {
+            
+            if questionLabel.text == "\(flashcards[currentFlashcardIndex].answer)" && change != 0 {
+                flashcards[currentFlashcardIndex].flip()
+            }
             
             currentFlashcardIndex += change
             
