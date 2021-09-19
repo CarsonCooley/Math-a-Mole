@@ -13,13 +13,14 @@
 		3602C4C326E3157900AFA35E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C4C226E3157900AFA35E /* StatisticsViewController.swift */; };
 		3602C4C726E317DE00AFA35E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3602C4C626E317DE00AFA35E /* WelcomeViewController.swift */; };
 		361D109226C4618D009363B7 /* CurrentGameFCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */; };
-		363F39C726E5555200D47567 /* Empty_Mole_Hole.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */; };
 		3655B7C026B3054600EC1580 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7BF26B3054600EC1580 /* MathQuestion.swift */; };
 		3655B7C326B3057700EC1580 /* Solvable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C226B3057700EC1580 /* Solvable.swift */; };
 		3655B7C626B305EA00EC1580 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C526B305EA00EC1580 /* Game.swift */; };
 		3655B7C926B3062B00EC1580 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7C826B3062B00EC1580 /* Flashcard.swift */; };
 		3655B7CC26B3072400EC1580 /* Mole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3655B7CB26B3072400EC1580 /* Mole.swift */; };
 		3662084226BB9FAF00DB0E5C /* ModeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3662084126BB9FAF00DB0E5C /* ModeSelectViewController.swift */; };
+		3663518026F6E75F00E2198E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663517F26F6E75F00E2198E /* AboutViewController.swift */; };
+		366C7E1526EC6C2F00800A83 /* molePop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 366C7E1426EC6C2F00800A83 /* molePop.wav */; };
 		366F9E57268FD7FE00A5DD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */; };
 		366F9E59268FD7FE00A5DD6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */; };
 		366F9E5B268FD7FE00A5DD6F /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F9E5A268FD7FE00A5DD6F /* GameplayViewController.swift */; };
@@ -35,13 +36,14 @@
 		3602C4C226E3157900AFA35E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		3602C4C626E317DE00AFA35E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGameFCViewController.swift; sourceTree = "<group>"; };
-		363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Empty_Mole_Hole.pdf; sourceTree = "<group>"; };
 		3655B7BF26B3054600EC1580 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
 		3655B7C226B3057700EC1580 /* Solvable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solvable.swift; sourceTree = "<group>"; };
 		3655B7C526B305EA00EC1580 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3655B7C826B3062B00EC1580 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		3655B7CB26B3072400EC1580 /* Mole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mole.swift; sourceTree = "<group>"; };
 		3662084126BB9FAF00DB0E5C /* ModeSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectViewController.swift; sourceTree = "<group>"; };
+		3663517F26F6E75F00E2198E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		366C7E1426EC6C2F00800A83 /* molePop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = molePop.wav; sourceTree = "<group>"; };
 		366F9E53268FD7FE00A5DD6F /* Math-a-Mole-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math-a-Mole-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366F9E56268FD7FE00A5DD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		366F9E58268FD7FE00A5DD6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3602C4C226E3157900AFA35E /* StatisticsViewController.swift */,
 				361D109126C4618D009363B7 /* CurrentGameFCViewController.swift */,
 				3602C4BE26E314D000AFA35E /* CumulativeFCViewController.swift */,
+				3663517F26F6E75F00E2198E /* AboutViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -123,8 +126,8 @@
 				3655B7BC26B3026900EC1580 /* View Controllers */,
 				366F9E5F268FD80000A5DD6F /* Assets.xcassets */,
 				3602C48026DDC95200AFA35E /* ColorCatalog.xcassets */,
-				363F39C626E5555200D47567 /* Empty_Mole_Hole.pdf */,
 				3602C48326DDDB7100AFA35E /* Constants.swift */,
+				366C7E1426EC6C2F00800A83 /* molePop.wav */,
 				366F9E64268FD80000A5DD6F /* Info.plist */,
 			);
 			path = "Math-a-Mole-1.0";
@@ -187,11 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366C7E1526EC6C2F00800A83 /* molePop.wav in Resources */,
 				366F9E63268FD80000A5DD6F /* LaunchScreen.storyboard in Resources */,
 				366F9E60268FD80000A5DD6F /* Assets.xcassets in Resources */,
 				366F9E5E268FD7FE00A5DD6F /* Main.storyboard in Resources */,
 				3602C48126DDC95200AFA35E /* ColorCatalog.xcassets in Resources */,
-				363F39C726E5555200D47567 /* Empty_Mole_Hole.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +208,7 @@
 				3602C4BF26E314D000AFA35E /* CumulativeFCViewController.swift in Sources */,
 				3662084226BB9FAF00DB0E5C /* ModeSelectViewController.swift in Sources */,
 				3602C48426DDDB7100AFA35E /* Constants.swift in Sources */,
+				3663518026F6E75F00E2198E /* AboutViewController.swift in Sources */,
 				366F9E5B268FD7FE00A5DD6F /* GameplayViewController.swift in Sources */,
 				3655B7C626B305EA00EC1580 /* Game.swift in Sources */,
 				3655B7CC26B3072400EC1580 /* Mole.swift in Sources */,
@@ -365,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XARDXUZD6;
 				INFOPLIST_FILE = "Math-a-Mole-1.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3XARDXUZD6;
 				INFOPLIST_FILE = "Math-a-Mole-1.0/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -21,36 +21,33 @@ class CurrentGameFCViewController: UIViewController {
     
     var views: [UIView] = []
     
-    var flashcards: [Flashcard] = []
+    var currentGameFlashcards: [Flashcard] = []
+    var dataPersistantFlashcards: [Flashcard] = []
     var currentFlashcardIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.hidesBackButton = true
+        views = [topView, bottomView]
         
         incorrectAnswerLabel.isHidden = true
         topView.layer.cornerRadius = 20
         topView.clipsToBounds = true
+        
+        navigationController?.navigationItem.backBarButtonItem?.title = "Back"
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        
         self.updateFlashcard(change: 0)
-        views = [topView, bottomView]
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        self.navigationItem.leftBarButtonItem = nil
-//        self.navigationItem.hidesBackButton = true
+        
     }
     
     @IBAction func flipPressed(_ sender: UIButton) {
-        flashcards[currentFlashcardIndex].flip()
+        currentGameFlashcards[currentFlashcardIndex].flip()
         self.incorrectAnswerLabel.isHidden = !self.incorrectAnswerLabel.isHidden
         self.updateFlashcard(change: 0)
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        if currentFlashcardIndex == flashcards.count - 1 {
+        if currentFlashcardIndex == currentGameFlashcards.count - 1 {
             currentFlashcardIndex = 0
             updateFlashcard(change: 0)
         } else {
@@ -60,7 +57,7 @@ class CurrentGameFCViewController: UIViewController {
     
     @IBAction func backPressed(_ sender: UIButton) {
         if currentFlashcardIndex == 0 {
-            currentFlashcardIndex = flashcards.count - 1
+            currentFlashcardIndex = currentGameFlashcards.count - 1
             updateFlashcard(change: 0)
         } else {
             updateFlashcard(change: -1)
@@ -74,38 +71,38 @@ class CurrentGameFCViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! CumulativeFCViewController
-        vc.flashcards = self.flashcards
+        vc.dataPersistantFlashcards = self.dataPersistantFlashcards
     }
     
     @IBAction func shufflePressed(_ sender: UIButton) {
-        flashcards.shuffle()
+        currentGameFlashcards.shuffle()
         currentFlashcardIndex = 0
         updateFlashcard(change: 0)
     }
     
     func updateFlashcard(change: Int) {
-        if flashcards.count == 0 {
+        if currentGameFlashcards.count == 0 {
             questionLabel.text = "No Flashcards"
             forwardButton.isHidden = true
             backButton.isHidden = true
             flipButton.isHidden = true
             progressLabel.isHidden = true
             incorrectAnswerLabel.isHidden = true
-        } else if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < flashcards.count) {
+        } else if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < currentGameFlashcards.count) {
             
-            if questionLabel.text == "\(flashcards[currentFlashcardIndex].answer)" && change != 0 {
-                flashcards[currentFlashcardIndex].flip()
+            if questionLabel.text == "\(currentGameFlashcards[currentFlashcardIndex].answer)" && change != 0 {
+                currentGameFlashcards[currentFlashcardIndex].flip()
             }
             
             currentFlashcardIndex += change
             
-            questionLabel.text = flashcards[currentFlashcardIndex].textShowing
-            progressLabel.text = "\(currentFlashcardIndex + 1) / \(flashcards.count)"
+            questionLabel.text = currentGameFlashcards[currentFlashcardIndex].textShowing
+            progressLabel.text = "\(currentFlashcardIndex + 1) / \(currentGameFlashcards.count)"
             
             if questionLabel.text?.count ?? -1 > 2 {
                 incorrectAnswerLabel.isHidden = true
             } else {
-                incorrectAnswerLabel.text = "You Answered: \(flashcards[currentFlashcardIndex].incorrectAnswer)"
+                incorrectAnswerLabel.text = "You Answered: \(currentGameFlashcards[currentFlashcardIndex].incorrectAnswer)"
                 incorrectAnswerLabel.isHidden = false
             }
         }

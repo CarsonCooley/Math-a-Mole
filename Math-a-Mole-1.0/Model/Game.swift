@@ -44,14 +44,10 @@ class Game {
     }
     
     func checkUserAnswer(userAnswer: Int) {
-        if userAnswer == currentQuestion!.answer {
+        if userAnswer == currentQuestion?.answer {
             numCorrectAnswers += 1
-            totalScore += 1
         } else {
             numIncorrectAnswers += 1
-            if totalScore > 0 {
-                totalScore -= 1
-            }
             
             let newFlashcard = Flashcard(question: currentQuestion!.toString(), answer: currentQuestion!.answer, incorrectAnswer: userAnswer)
             flashcards.append(newFlashcard)
@@ -87,6 +83,10 @@ class Game {
     }
     
     func end() {
+        totalScore = numCorrectAnswers - numIncorrectAnswers
+        if totalScore < 0 {
+            totalScore = 0
+        }
         currentQuestion = nil
     }
     

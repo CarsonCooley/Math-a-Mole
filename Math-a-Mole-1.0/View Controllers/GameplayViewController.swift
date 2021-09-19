@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameplayViewController: UIViewController {
     
@@ -53,12 +54,21 @@ class GameplayViewController: UIViewController {
     var highScore: Int = 0
     let defaults = UserDefaults.standard
     
+    var currentGameFlashcards: [Flashcard] = []
+    var dataPersistantFlashcards: [Flashcard] = []
+    var currentFlashcardIndex = 0
+    
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Flashcards.plist")
+    
+    var player: AVAudioPlayer!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         topViewHeight.constant = mainView.frame.size.height / 20 * 7
         moleViewHeight.constant = mainView.frame.size.height / 20 * 10
         bottomViewHeight.constant = mainView.frame.size.height / 20 * 3
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 5)
+    
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,7 +118,7 @@ class GameplayViewController: UIViewController {
             game.questionTypes = [AddQuestion(), SubQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 5
-            game.time = 10
+            game.time = 30
         } else if gameDifficulty == "Intermediate" {
             game.numMoles = 12
             game.questionTypes = [AddQuestion(), SubQuestion()]
@@ -120,19 +130,21 @@ class GameplayViewController: UIViewController {
             game.questionTypes = [MultQuestion(), DivQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 10
-            game.time = 10
+            game.time = 60
         } else if gameDifficulty == "Expert" {
             game.numMoles = 12
             game.questionTypes = [AddQuestion(), SubQuestion(), MultQuestion(), DivQuestion()]
             game.questionParamMin = 0
             game.questionParamMax = 10
-            game.time = 20
+            game.time = 90
         } else {
             print("ERROR: game difficulty not captured")
         }
     }
     
     @IBAction func molePressed(_ sender: UIButton) {
+        playSound()
+        
         game.checkUserAnswer(userAnswer: Int(sender.currentTitle!) ?? -1)
         game.currentQuestion?.dummyAnswers.removeAll()
         game.resetMoles()
@@ -200,23 +212,30 @@ class GameplayViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! StatisticsViewController
-        vc.flashcards = self.game.flashcards
         vc.numCorrectAnswers = self.game.numCorrectAnswers
         vc.numIncorrectAnswers = self.game.numIncorrectAnswers
         vc.totalScore = self.game.totalScore
         vc.highScore = self.highScore
+        
+        loadFlashcards()
+        for flashcard in self.game.flashcards {
+            dataPersistantFlashcards.append(flashcard)
+        }
+        saveFlashcards()
+        vc.currentGameFlashcards = self.game.flashcards
+        vc.dataPersistantFlashcards = self.dataPersistantFlashcards
     }
     
     @objc func updateCounter() {
-        let progressPercentage = Float(secondsRemaining) / Float(totalTime)
+        let progressPercentage = Float(secondsRemaining - 1) / Float(totalTime)
         self.progressBar.progress = Float(progressPercentage)
         
         if secondsRemaining > 0 {
             secondsRemaining -= 1
         } else {
-            timer.invalidate()
             self.startButton.isHidden = false
             self.moleStack.isHidden = true
+            timer.invalidate()
             self.updateHighScores()
             game.end()
             self.defaults.set(self.highScores, forKey: "HighScoresArray")
@@ -265,6 +284,37 @@ class GameplayViewController: UIViewController {
                 moleButton.setBackgroundImage(UIImage(named: "mole.pdf"), for: .normal)
                 moleButton.isEnabled = true
             }
+        }
+    }
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "molePop", withExtension: "wav")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
+    }
+    
+    func saveFlashcards() {
+        
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(dataPersistantFlashcards)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding flashcard array: \(error)")
+        }
+    }
+    
+    func loadFlashcards() {
+        
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                dataPersistantFlashcards = try decoder.decode([Flashcard].self, from: data)
+            } catch {
+                print("Error decoding flashcard array \(error)")
+            }
+            
         }
     }
 }

@@ -22,7 +22,6 @@ class CumulativeFCViewController: UIViewController {
     
     var views: [UIView] = []
     
-    var flashcards: [Flashcard] = []
     var dataPersistantFlashcards: [Flashcard] = []
     var currentFlashcardIndex = 0
 
@@ -34,12 +33,7 @@ class CumulativeFCViewController: UIViewController {
         topView.layer.cornerRadius = 20
         topView.clipsToBounds = true
         views = [topView, bottomView]
-        
         loadFlashcards()
-        
-        for flashcard in dataPersistantFlashcards {
-            flashcards.append(flashcard)
-        }
         
         self.updateFlashcard(change: 0)
         
@@ -55,19 +49,19 @@ class CumulativeFCViewController: UIViewController {
     }
     
     @IBAction func shufflePressed(_ sender: UIButton) {
-        flashcards.shuffle()
+        dataPersistantFlashcards.shuffle()
         currentFlashcardIndex = 0
         updateFlashcard(change: 0)
     }
     
     @IBAction func trashPressed(_ sender: UIButton) {
-        flashcards.remove(at: currentFlashcardIndex)
+        dataPersistantFlashcards.remove(at: currentFlashcardIndex)
         updateFlashcard(change: 0)
     }
     
     @IBAction func backPressed(_ sender: UIButton) {
         if currentFlashcardIndex == 0 {
-            currentFlashcardIndex = flashcards.count - 1
+            currentFlashcardIndex = dataPersistantFlashcards.count - 1
             updateFlashcard(change: 0)
         } else {
             updateFlashcard(change: -1)
@@ -75,12 +69,12 @@ class CumulativeFCViewController: UIViewController {
     }
     
     @IBAction func flipPressed(_ sender: UIButton) {
-        flashcards[currentFlashcardIndex].flip()
+        dataPersistantFlashcards[currentFlashcardIndex].flip()
         self.updateFlashcard(change: 0)
     }
     
     @IBAction func nextPressed(_ sender: UIButton) {
-        if currentFlashcardIndex == flashcards.count - 1 {
+        if currentFlashcardIndex == dataPersistantFlashcards.count - 1 {
             currentFlashcardIndex = 0
             updateFlashcard(change: 0)
         } else {
@@ -89,7 +83,7 @@ class CumulativeFCViewController: UIViewController {
     }
     
     func updateFlashcard(change: Int) {
-        if flashcards.count == 0 {
+        if dataPersistantFlashcards.count == 0 {
             questionLabel.text = "No Flashcards"
             forwardButton.isHidden = true
             backButton.isHidden = true
@@ -97,36 +91,36 @@ class CumulativeFCViewController: UIViewController {
             progressLabel.isHidden = true
             trashButton.isHidden = true
             shuffleButton.isHidden = true
-        } else if currentFlashcardIndex == flashcards.count {
+        } else if currentFlashcardIndex == dataPersistantFlashcards.count {
             currentFlashcardIndex -= 1
         }
-        if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < flashcards.count) {
+        if (currentFlashcardIndex + change >= 0) && (currentFlashcardIndex + change < dataPersistantFlashcards.count) {
             
-            if questionLabel.text == "\(flashcards[currentFlashcardIndex].answer)" && change != 0 {
-                flashcards[currentFlashcardIndex].flip()
+            if questionLabel.text == "\(dataPersistantFlashcards[currentFlashcardIndex].answer)" && change != 0 {
+                dataPersistantFlashcards[currentFlashcardIndex].flip()
             }
             
             currentFlashcardIndex += change
             
-            questionLabel.text = flashcards[currentFlashcardIndex].textShowing
-            progressLabel.text = "\(currentFlashcardIndex + 1) / \(flashcards.count)"
+            questionLabel.text = dataPersistantFlashcards[currentFlashcardIndex].textShowing
+            progressLabel.text = "\(currentFlashcardIndex + 1) / \(dataPersistantFlashcards.count)"
         }
     }
     
     func saveFlashcards() {
-        
+
         let encoder = PropertyListEncoder()
-        
+
         do {
-            let data = try encoder.encode(flashcards)
+            let data = try encoder.encode(dataPersistantFlashcards)
             try data.write(to: dataFilePath!)
         } catch {
             print("Error encoding flashcard array: \(error)")
         }
     }
-    
+
     func loadFlashcards() {
-        
+
         if let data = try? Data(contentsOf: dataFilePath!) {
             let decoder = PropertyListDecoder()
             do {
@@ -134,7 +128,7 @@ class CumulativeFCViewController: UIViewController {
             } catch {
                 print("Error decoding flashcard array \(error)")
             }
-            
+
         }
     }
     

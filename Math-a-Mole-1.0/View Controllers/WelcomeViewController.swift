@@ -13,8 +13,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var viewFCButton: UIButton!
     @IBOutlet weak var howToPlayButton: UIButton!
+    @IBOutlet weak var aboutButton: UIButton!
     
     var buttons: [UIButton] = []
+    var dataPersistantFlashcards: [Flashcard] = []
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationItem.backBarButtonItem?.tintColor = UIColor.white
@@ -24,7 +26,7 @@ class WelcomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttons = [playButton, viewFCButton, howToPlayButton]
+        buttons = [playButton, viewFCButton, howToPlayButton, aboutButton]
         for button in buttons {
             button.layer.cornerRadius = 10
             button.clipsToBounds = true
@@ -40,6 +42,16 @@ class WelcomeViewController: UIViewController {
 
     @IBAction func playPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.Segues.advanceToModeSelect, sender: self)
+    }
+    
+    @IBAction func aboutPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: K.Segues.advanceToAbout, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? CumulativeFCViewController {
+            vc.dataPersistantFlashcards = self.dataPersistantFlashcards
+        }
     }
     
     @IBAction func viewFlashcardsPressed(_ sender: UIButton) {

@@ -15,7 +15,8 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     
-    var flashcards: [Flashcard] = []
+    var currentGameFlashcards: [Flashcard] = []
+    var dataPersistantFlashcards: [Flashcard] = []
     var numCorrectAnswers: Int = 0
     var numIncorrectAnswers: Int = 0
     var totalScore: Int = 0
@@ -37,9 +38,8 @@ class StatisticsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! CurrentGameFCViewController
-        vc.flashcards = self.flashcards
+        vc.currentGameFlashcards = self.currentGameFlashcards
+        vc.dataPersistantFlashcards = self.dataPersistantFlashcards
     }
     
-    
-
 }
