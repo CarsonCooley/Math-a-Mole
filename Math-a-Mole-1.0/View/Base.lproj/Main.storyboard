@@ -845,14 +845,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="269.33333333333331"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brandLogo" translatesAutoresizingMaskIntoConstraints="NO" id="stH-fd-bOr">
-                                                <rect key="frame" x="25" y="25" width="340" height="344.33333333333331"/>
+                                                <rect key="frame" x="25" y="25" width="340" height="314.33333333333331"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="stH-fd-bOr" secondAttribute="bottom" constant="-100" id="1gg-S5-5Th"/>
-                                            <constraint firstItem="stH-fd-bOr" firstAttribute="leading" secondItem="P6I-lW-6KE" secondAttribute="leading" constant="25" id="6oy-06-xxy"/>
-                                            <constraint firstAttribute="trailing" secondItem="stH-fd-bOr" secondAttribute="trailing" constant="25" id="IXg-lb-JlS"/>
+                                            <constraint firstAttribute="bottom" secondItem="stH-fd-bOr" secondAttribute="bottom" constant="-70" id="1gg-S5-5Th"/>
+                                            <constraint firstItem="stH-fd-bOr" firstAttribute="leading" secondItem="P6I-lW-6KE" secondAttribute="leading" constant="25" id="6oy-06-xxy">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
+                                            <constraint firstAttribute="trailing" secondItem="stH-fd-bOr" secondAttribute="trailing" constant="25" id="IXg-lb-JlS">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                            </constraint>
                                             <constraint firstItem="stH-fd-bOr" firstAttribute="top" secondItem="P6I-lW-6KE" secondAttribute="top" constant="25" id="cy9-50-kne"/>
                                         </constraints>
                                     </view>
@@ -1037,6 +1041,9 @@
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 </variation>
+                                <connections>
+                                    <action selector="privacyPressed:" destination="bHx-4b-P8w" eventType="touchUpInside" id="y8g-fv-pdu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gcz-8a-uyF"/>

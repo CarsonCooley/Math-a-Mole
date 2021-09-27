@@ -10,7 +10,7 @@ import Foundation
 struct K {
     
     struct About {
-        static let aboutLabel = "Math-a-Mole is a game and education resource privately developed by Carson Cooley. Special thanks to my Mom, Dad, Meagan, Shannon, Morgan, and my closest friends at W&L for their support."
+        static let aboutLabel = "Math-a-Mole is a game and education resource privately developed by Carson Cooley. Special love and thank you to my Mom, Dad, sisters, Morgan, and my closest friends at W&L for their enduring support."
         static let emailLabel = "Please contact math-a-mole@gmail.com for questions and support"
     }
     

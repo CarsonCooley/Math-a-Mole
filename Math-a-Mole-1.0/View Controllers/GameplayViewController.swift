@@ -196,7 +196,7 @@ class GameplayViewController: UIViewController {
                 self.updateUI()
                 self.moleStack.isHidden = true
                 self.questionLabel.isHidden = true
-                self.whatIsLabel.text = "Game is paused"
+                self.whatIsLabel.text = "GAME IS PAUSED"
                 exitButton.isEnabled = true
                 timer.invalidate()
             } else {
